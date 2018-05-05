@@ -8,11 +8,10 @@ using namespace std;
 //someone please explain to me how this code work please...
 void gotoxy(int x, int y)
 {
-  static HANDLE h = NULL;  
-  if(!h)
-    h = GetStdHandle(STD_OUTPUT_HANDLE);
-  COORD c = { x, y };  
-  SetConsoleCursorPosition(h,c);
+    static HANDLE h = NULL;  
+    if (!h) h = GetStdHandle(STD_OUTPUT_HANDLE);
+    COORD c = { x, y };  
+    SetConsoleCursorPosition(h,c);
 }
 
 int main()
