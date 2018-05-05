@@ -1,17 +1,21 @@
 #ifndef BOX_HPP_INCLUDED 
 #define BOX_HPP_INCLUDED
 
-class box {
+class Box {
 private:
     bool key;
 public:
-    box(bool=false); //constructor
+    static int objectCount;
+    Box(bool=false); //constructor
     void swap();
     void open();
 };
 
-box::box(bool value) {
+int Box::objectCount = 0;
+
+Box::Box(bool value) {
     key = value;
+    objectCount++;
 }
 
 #endif // BOX_HPP_INCLUDED
