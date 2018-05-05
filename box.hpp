@@ -3,9 +3,15 @@
 
 class box {
 private:
-    int key;
+    bool key;
 public:
+    box(bool=false); //constructor
     void swap();
+    void open();
 };
+
+box::box(bool value) {
+    key = value;
+}
 
 #endif // BOX_HPP_INCLUDED
