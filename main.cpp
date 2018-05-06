@@ -18,11 +18,6 @@ void textcolor(int color) { SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HAND
 
 int main()
 {
-    for(int i=0; i<100; i++){
-        textcolor(i);
-        cout << "Color #" << i << endl;
-    }
-    cin.get();
     //**JUST IDEA**
     bool check;
     try
