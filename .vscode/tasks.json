@@ -10,7 +10,8 @@
             "args": [
                 "-g",
                 "-Og",
-                "-Wall",
+                //"-Wall",
+                "legacy.cpp",
                 "main.cpp",
                 "load.cpp",
             ],
