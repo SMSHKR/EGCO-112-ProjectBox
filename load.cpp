@@ -21,7 +21,7 @@ void load::loading()
     cout << "\r";
     cout << "\t\t\t       ";
     textcolor(3);
-    for (int i = 0; i <= 12; i++)
+    for (int i = 0; i <= 25; i++)
     {
         cout << b;
         Sleep(speed);
