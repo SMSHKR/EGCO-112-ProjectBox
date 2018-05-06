@@ -14,7 +14,7 @@ void gotoxy(int x, int y)
     SetConsoleCursorPosition(h,c);
 }
 
-int textcolor(int color) { SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),color); }
+void textcolor(int color) { SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),color); }
 
 int main()
 {
