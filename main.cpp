@@ -6,7 +6,7 @@
 
 using namespace std;
 //someone please explain to me how this code work please...
-void gotoxy(int x, int y)
+void gotoxy(short x, short y)
 {
     static HANDLE h = NULL;  
     if (!h) h = GetStdHandle(STD_OUTPUT_HANDLE);
