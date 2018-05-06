@@ -1,9 +1,9 @@
 #include <iostream>
 #include <windows.h>
 #include "Header/load.hpp"
+//#include "Header/legacy.hpp"
 
 using namespace std;
-void textcolor(int color) { SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color); }
 
 load::load(int i) { speed = i; }
 

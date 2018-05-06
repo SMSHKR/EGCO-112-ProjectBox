@@ -1,21 +1,12 @@
 #include <iostream>
-#include <windows.h>
+
 #include "Header/menu.hpp"
 #include "Header/box.hpp"
 #include "Header/stage.hpp"
 #include "Header/load.hpp"
+#include "Header/legacy.hpp"
 
 using namespace std;
-//someone please explain to me how this code work please...
-void gotoxy(short x, short y)
-{
-    static HANDLE h = NULL;  
-    if (!h) h = GetStdHandle(STD_OUTPUT_HANDLE);
-    COORD c = { x, y };  
-    SetConsoleCursorPosition(h,c);
-}
-
-void textcolor(int color) { SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),color); }
 
 int main()
 {
@@ -52,11 +43,11 @@ int main()
     }
     */
     
-    Box *HEAD = NULL;
-    Box *t = NULL;
+    //Box *HEAD = NULL;
+    //Box *t = NULL;
     
-    bool passed;
-    passed = stage(3,HEAD,t);
+    //bool passed;
+    //passed = stage(3,HEAD,t);
 
     return 0;
 }
