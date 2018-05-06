@@ -4,8 +4,10 @@ using namespace std;
 
 void textcolor(int color) { SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),color); }
 
-int main() {
-    for(int i=0; i<=128; i++){
+int main() 
+{
+  
+    for(int i=0; i<=256; i++){
         textcolor(i);
         cout << "Color #" << i << endl;
     }
