@@ -3,6 +3,7 @@
 #include "Header/menu.hpp"
 #include "Header/box.hpp"
 #include "Header/stage.hpp"
+#include "Header/load.hpp"
 
 using namespace std;
 //someone please explain to me how this code work please...
@@ -18,23 +19,8 @@ void textcolor(int color) { SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HAND
 
 int main()
 {
-    system("color 2f");
-    system("color 0e");
-    char a= 120,b=219;
-    cout<<"\n\n\n\t\t\t\t\tLOADING";
-    cout<<"\n\n\n";
-    cout<<"\t\t\t       ";
-    for(int i = 0;i<=25;i++)
-    cout<<a;
-    Sleep(150);
-    cout<<"\r";
-    cout<<"\t\t\t       ";
-    for(int i=0;i<=12;i++)
-    {
-        cout<<b;
-        Sleep(200);
-    }
-    system("pause>0");
+    load load1(200);
+    load1.loading();
     //**JUST IDEA**
     /**JUST IDEA**
     bool check;

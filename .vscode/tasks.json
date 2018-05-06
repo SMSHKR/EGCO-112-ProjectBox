@@ -11,7 +11,8 @@
                 "-g",
                 "-Og",
                 "-Wall",
-                "main.cpp"
+                "main.cpp",
+                "load.cpp",
             ],
             "group": {
                 "kind": "build",

@@ -5,7 +5,7 @@ class Box {
 private:
     bool key;
 public:
-    static int objectCount;
+    static int objectCount; //permutation and combination math m.6
     Box(bool=false); //constructor
     void swap();
     void open();
