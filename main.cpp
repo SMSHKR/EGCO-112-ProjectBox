@@ -3,7 +3,6 @@
 
 #include "Header/menu.hpp"
 #include "Header/box.hpp"
-#include "Header/game.hpp"
 
 using namespace std;
 //someone please explain to me how this code work please...
@@ -49,7 +48,7 @@ int main()
     }
     */
 
-    game();
+    Box *HEAD;
 
     return 0;
 }
