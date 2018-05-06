@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "time.h": "c",
+        "cstdlib": "cpp"
     }
 }

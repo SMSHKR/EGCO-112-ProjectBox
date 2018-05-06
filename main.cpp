@@ -3,6 +3,7 @@
 
 #include "Header/menu.hpp"
 #include "Header/box.hpp"
+#include "Header/stage.hpp"
 
 using namespace std;
 //someone please explain to me how this code work please...
@@ -47,8 +48,12 @@ int main()
         check = true;
     }
     */
-
-    Box *HEAD;
+    
+    Box *HEAD = NULL;
+    Box *t = NULL;
+    
+    bool passed;
+    passed = stage(3,HEAD,t);
 
     return 0;
 }
