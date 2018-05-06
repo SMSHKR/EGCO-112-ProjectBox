@@ -5,7 +5,7 @@
 
 using namespace std;
 //someone please explain to me how this code work please...
-void gotoxy(int x, int y)
+void gotoxy(short x, short y)
 {
     static HANDLE h = NULL;  
     if (!h) h = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -35,6 +35,7 @@ int main()
     }
     system("pause>0");
     //**JUST IDEA**
+    /**JUST IDEA**
     bool check;
     try
     {
@@ -62,5 +63,9 @@ int main()
         cin.ignore(50,'\n');
         check = true;
     }
+    */
+
+    Box *HEAD;
+
     return 0;
 }
