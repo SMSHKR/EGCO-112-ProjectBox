@@ -14,8 +14,16 @@ void gotoxy(int x, int y)
     SetConsoleCursorPosition(h,c);
 }
 
+int textcolor(int color) { SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE),color); }
+
 int main()
 {
+    //Why it's not working?
+    textcolor(14);
+    cout << "Color #14" << endl;
+    textcolor(0);
+    cout << "Color #0" << endl;
+    
     //**JUST IDEA**
     bool check;
     try
