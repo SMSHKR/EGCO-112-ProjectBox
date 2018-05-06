@@ -18,12 +18,11 @@ void textcolor(int color) { SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HAND
 
 int main()
 {
-    //Why it's not working?
-    textcolor(14);
-    cout << "Color #14" << endl;
-    textcolor(0);
-    cout << "Color #0" << endl;
-    
+    for(int i=0; i<100; i++){
+        textcolor(i);
+        cout << "Color #" << i << endl;
+    }
+    cin.get();
     //**JUST IDEA**
     bool check;
     try
@@ -31,7 +30,7 @@ int main()
         check = false;
         do
         {
-            system("cls");
+            //system("cls");
             int choice = menu();
             switch (choice)
             {
