@@ -8,6 +8,28 @@
             "name": "(gdb) Launch",
             "type": "cppdbg",
             "request": "launch",
+            "preLaunchTask": "Build Binary",
+            "program": "${workspaceFolder}/a.exe",
+            "args": [],
+            "stopAtEntry": true,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "miDebuggerPath": "C:/MinGW/bin/gdb.exe",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+        },
+        {
+            "name": "Color Reference",
+            "type": "cppdbg",
+            "request": "launch",
+            "preLaunchTask": "Build Color",
             "program": "${workspaceFolder}/a.exe",
             "args": [],
             "stopAtEntry": false,
@@ -23,7 +45,6 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "Compile C++"
         },
     ]
 }

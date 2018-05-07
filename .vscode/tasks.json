@@ -4,24 +4,37 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Compile C++",
+            "label": "Build Binary",
             "type": "shell",
             "command": "g++",
             "args": [
-                "-g", //add Debug component
-                "-Og", //Optimize for Debug
-                "-Wall", //Waring All
+                "-g",
+                "-Og",
+                "-Wall",
                 "main.cpp",
                 "load.cpp",
                 "legacy.cpp",
                 "menu.cpp",
                 "box.cpp",
-                "stage.cpp",
+                "stage.cpp"
             ],
             "group": {
                 "kind": "build",
                 "isDefault": true
             }
+        },
+        {
+            "label": "Build Color",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-Os",
+                "Reference/color.cpp"
+            ],
+            "group": "build",
+            "problemMatcher": [
+                "$gcc"
+            ]
         }
     ]
 }
