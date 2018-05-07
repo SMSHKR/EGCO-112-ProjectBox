@@ -35,6 +35,19 @@
             "problemMatcher": [
                 "$gcc"
             ]
+        },
+        {
+            "label": "Build ASCII",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-Os",
+                "Reference/ASCII.cpp"
+            ],
+            "group": "build",
+            "problemMatcher": [
+                "$gcc"
+            ]
         }
     ]
 }
