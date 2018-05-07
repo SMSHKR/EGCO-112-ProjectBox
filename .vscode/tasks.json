@@ -8,12 +8,15 @@
             "type": "shell",
             "command": "g++",
             "args": [
-                "-g",
-                "-Og",
-                //"-Wall",
-                "legacy.cpp",
+                "-g", //add Debug component
+                "-Og", //Optimize for Debug
+                "-Wall", //Waring All
                 "main.cpp",
                 "load.cpp",
+                "legacy.cpp",
+                "menu.cpp",
+                "box.cpp",
+                "stage.cpp",
             ],
             "group": {
                 "kind": "build",

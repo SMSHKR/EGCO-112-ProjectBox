@@ -1,6 +1,5 @@
 #include <iostream>
 #include <windows.h>
-
 #include "Header/menu.hpp"
 #include "Header/box.hpp"
 #include "Header/stage.hpp"
