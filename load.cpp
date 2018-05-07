@@ -1,6 +1,5 @@
 #include <iostream>
 #include <windows.h>
-
 #include "Header/load.hpp"
 #include "Header/legacy.hpp"
 
