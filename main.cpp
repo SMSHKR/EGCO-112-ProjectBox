@@ -1,5 +1,6 @@
 #include <iostream>
 #include <windows.h>
+#include <conio.h>
 #include "Header/menu.hpp"
 #include "Header/box.hpp"
 #include "Header/stage.hpp"
@@ -10,11 +11,25 @@ using namespace std;
 
 int main()
 {
+<<<<<<< HEAD
     cout<<"ddddddddd\r";
     //load a(200);
     //a.loading();
 
     cin.get();
+=======
+    //load load1(200);
+    //load1.loading();
+    
+    char a;
+    while (a!='\n'){
+        a = getch();
+        if (a == 37) cout << "Left Arrow" << endl;
+        if (a == 38) cout << "Up Arrow" << endl;
+        if (a == 39) cout << "Right Arrow" << endl;
+        if (a == 40) cout << "Down Arrow" << endl;
+    }
+>>>>>>> 25043890439923b23f04d63b74fcf970e93227ae
     //**JUST IDEA**
     /**JUST IDEA**
     bool check;
