@@ -13,15 +13,7 @@ int main()
 {
     //load load1(200);
     //load1.loading();
-    
-    char a;
-    while (a!='\n'){
-        a = getch();
-        if (a == 37) cout << "Left Arrow" << endl;
-        if (a == 38) cout << "Up Arrow" << endl;
-        if (a == 39) cout << "Right Arrow" << endl;
-        if (a == 40) cout << "Down Arrow" << endl;
-    }
+
     //**JUST IDEA**
     /**JUST IDEA**
     bool check;
