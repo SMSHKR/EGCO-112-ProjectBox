@@ -8,7 +8,7 @@ private:
 public:
     static int objectCount;
     
-    Box *next;
+    Box *next = '\0';
     Box(bool=false); //constructor
     
     void swap();
