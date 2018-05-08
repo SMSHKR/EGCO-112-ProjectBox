@@ -11,13 +11,9 @@ using namespace std;
 
 int main()
 {
-    fontsize(50);
-    load load1(100);
-    load1.loading();
-    system("cls");
-    menu();
-    //**JUST IDEA**
-    /**JUST IDEA**
+    //load load1(200);
+    //load1.loading();
+/*
     bool check;
     try
     {
@@ -45,13 +41,13 @@ int main()
         cin.ignore(50,'\n');
         check = true;
     }
-    */
+*/
     
-    //Box *HEAD = NULL;
-    //Box *t = NULL;
+    Box *HEAD = NULL;
+    Box *t = NULL;
     
-    //bool passed;
-    //passed = stage(3,HEAD,t);
+    bool passed;
+    passed = stage(3,HEAD);
    
     return 0;
 }

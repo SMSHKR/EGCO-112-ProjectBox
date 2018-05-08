@@ -4,12 +4,16 @@
 class Box {
 private:
     bool key;
+
 public:
     static int objectCount;
+    
+    Box *next;
     Box(bool=false); //constructor
     
     void swap();
     void open();
+    void append(Box*);
 };
 
 #endif // BOX_HPP_INCLUDED
