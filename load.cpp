@@ -13,7 +13,7 @@ void load::loading()
     textcolor(7);
     gotoxy(40,3);
     cout << "LOADING";
-    gotoxy(64,6);
+    gotoxy(31,6);
     for (int i = 0; i <= 25; i++)
         cout << a;
     Sleep(150);
@@ -24,5 +24,4 @@ void load::loading()
         cout << b;
         Sleep(speed);
     }
-    system("pause>0");
 }

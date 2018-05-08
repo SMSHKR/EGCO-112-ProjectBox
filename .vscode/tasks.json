@@ -16,7 +16,7 @@
                 "legacy.cpp",
                 "menu.cpp",
                 "box.cpp",
-                "stage.cpp"
+                "stage.cpp",
             ],
             "group": {
                 "kind": "build",

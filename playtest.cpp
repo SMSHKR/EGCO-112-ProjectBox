@@ -15,7 +15,6 @@ int main()
     load load1(100);
     load1.loading();
     system("cls");
-    menu();
     //**JUST IDEA**
     /**JUST IDEA**
     bool check;
