@@ -36,10 +36,13 @@ bool stage(int num) {
                 walker->append(new Box(true));
                 key = true;
             } 
-            else walker->append(new Box); 
+            else walker->append(new Box);
         }
     }
 
     //Actual Game
-    
+
+
+    //Call Delete to every Box that created before return result
+    return 1; //If player passed
 }
