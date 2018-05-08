@@ -11,18 +11,9 @@ using namespace std;
 
 int main()
 {
-    load load1(200);
-    load1.loading();
-    
-    /*char a;
-    while (a!='\n'){
-        a = getch();
-        if (a == 68) cout << "Left Arrow" << endl;
-        if (a == 72) cout << "Up Arrow" << endl;
-        if (a == 67) cout << "Right Arrow" << endl;
-        if (a == 80) cout << "Down Arrow" << endl;
-       
-        }*/
+    //load load1(200);
+    //load1.loading();
+
     //**JUST IDEA**
     /**JUST IDEA**
     bool check;
