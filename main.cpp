@@ -11,25 +11,18 @@ using namespace std;
 
 int main()
 {
-<<<<<<< HEAD
-    cout<<"ddddddddd\r";
-    //load a(200);
-    //a.loading();
-
-    cin.get();
-=======
-    //load load1(200);
-    //load1.loading();
+    load load1(200);
+    load1.loading();
     
-    char a;
+    /*char a;
     while (a!='\n'){
         a = getch();
-        if (a == 37) cout << "Left Arrow" << endl;
-        if (a == 38) cout << "Up Arrow" << endl;
-        if (a == 39) cout << "Right Arrow" << endl;
-        if (a == 40) cout << "Down Arrow" << endl;
-    }
->>>>>>> 25043890439923b23f04d63b74fcf970e93227ae
+        if (a == 68) cout << "Left Arrow" << endl;
+        if (a == 72) cout << "Up Arrow" << endl;
+        if (a == 67) cout << "Right Arrow" << endl;
+        if (a == 80) cout << "Down Arrow" << endl;
+       
+        }*/
     //**JUST IDEA**
     /**JUST IDEA**
     bool check;

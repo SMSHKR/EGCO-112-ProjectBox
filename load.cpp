@@ -17,8 +17,7 @@ void load::loading()
     for (int i = 0; i <= 25; i++)
         cout << a;
     Sleep(150);
-    cout << "\r";
-    cout << "\t\t\t       ";
+    gotoxy(31,6);
     textcolor(3);
     for (int i = 0; i <= 25; i++)
     {
