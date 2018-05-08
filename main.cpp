@@ -42,12 +42,8 @@ int main()
         check = true;
     }
 */
-    
-    Box *HEAD = NULL;
-    Box *t = NULL;
-    
     bool passed;
-    passed = stage(3,HEAD);
+    passed = stage(3);
    
     return 0;
 }

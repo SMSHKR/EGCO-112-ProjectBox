@@ -2,9 +2,10 @@
 #include <time.h>
 #include "Header/box.hpp"
 
-bool stage(int num, Box *&HEAD) {
+bool stage(int num) {
 
     srand(time(NULL));
+    Box *HEAD = NULL;
 
     //Create Linked List of Box
     bool key = false; //Checked If key generated
@@ -38,4 +39,7 @@ bool stage(int num, Box *&HEAD) {
             else walker->append(new Box); 
         }
     }
+
+    //Actual Game
+    
 }

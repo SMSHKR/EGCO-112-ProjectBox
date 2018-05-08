@@ -6,6 +6,6 @@
 #define KEY_RIGHT 77
 #define KEY_DOWN 80
 
-bool stage(int, Box);
+bool stage(int);
 
 #endif // STAGE_HPP_INCLUDED
