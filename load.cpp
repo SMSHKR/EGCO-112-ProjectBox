@@ -11,9 +11,9 @@ void load::loading()
 {
     char a = 120, b = 219;
     textcolor(7);
-    cout << "\n\n\n\t\t\t\t\tLOADING";
-    cout << "\n\n\n";
-    cout << "\t\t\t       ";
+    gotoxy(40,3);
+    cout << "LOADING";
+    gotoxy(64,6);
     for (int i = 0; i <= 25; i++)
         cout << a;
     Sleep(150);

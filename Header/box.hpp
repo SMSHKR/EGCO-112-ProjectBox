@@ -7,6 +7,7 @@ private:
 public:
     static int objectCount;
     Box(bool=false); //constructor
+    
     void swap();
     void open();
 };

@@ -10,8 +10,11 @@ using namespace std;
 
 int main()
 {
-    load load1(200);
-    load1.loading();
+    cout<<"ddddddddd\r";
+    //load a(200);
+    //a.loading();
+
+    cin.get();
     //**JUST IDEA**
     /**JUST IDEA**
     bool check;
@@ -48,6 +51,6 @@ int main()
     
     //bool passed;
     //passed = stage(3,HEAD,t);
-
+   
     return 0;
 }
