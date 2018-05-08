@@ -1,5 +1,6 @@
 #include <iostream>
 #include <windows.h>
+#include <conio.h>
 #include "Header/menu.hpp"
 #include "Header/box.hpp"
 #include "Header/stage.hpp"
@@ -12,6 +13,7 @@ int main()
 {
     load load1(200);
     load1.loading();
+    
     //**JUST IDEA**
     /**JUST IDEA**
     bool check;
