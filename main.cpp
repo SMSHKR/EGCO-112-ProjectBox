@@ -9,8 +9,8 @@
 
 using namespace std;
 
-int main()
-{
+int main() {
+
     //load load1(200);
     //load1.loading();
 /*

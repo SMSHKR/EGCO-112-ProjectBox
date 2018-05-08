@@ -27,6 +27,29 @@
             ]
         },
         {
+            "label": "Build Playground",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-g",
+                "-Og",
+                "-Wall",
+                "playground.cpp",
+                "load.cpp",
+                "legacy.cpp",
+                "menu.cpp",
+                "box.cpp",
+                "stage.cpp",
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
             "label": "Build Color",
             "type": "shell",
             "command": "g++",
