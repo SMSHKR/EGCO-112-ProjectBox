@@ -6,3 +6,7 @@ Box::Box(bool value) {
     key = value;
     objectCount++;
 }
+
+void Box::append(Box *NODE) {
+    next=NODE;
+}

@@ -2,16 +2,34 @@
 #include <time.h>
 #include "Header/box.hpp"
 
-bool stage(int num, Box *&HEAD, Box *&t) {
-    srand(time(NULL));
-    bool key = false;
-    if (!HEAD) {
-        int check = rand()%2; //0, 1
-        if (check == 0)
-            HEAD = new Box(false);
-        else {
-            HEAD = new Box(true);
+bool stage(int num, Box *&HEAD) {
 
+    srand(time(NULL));
+
+    //Create Linked List of Box
+    bool key = false;
+    int created = 0;
+    while (created < num) {
+        if (!HEAD) {
+            bool check = 0;
+            if (!key) check = rand() % 2; //0, 1
+            if (check != 1) {
+                HEAD = new Box(true);
+                key = true;
+            } 
+            else HEAD = new Box;
         }
+        else {
+            bool check = 0;
+            Box *walker = HEAD;
+            while (walker->next) walker = walker->next;
+            if (!key) check = rand() % 2; //0, 1
+            if (check != 1) {
+                walker->append(new Box(true));
+                key = true;
+            } 
+            else walker->append(new Box); 
+        }
+        created += 1;
     }
 }
