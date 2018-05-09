@@ -11,8 +11,10 @@ using namespace std;
 
 int main() {
 
-    //load load1(200);
-    //load1.loading();
+    load load1(200);
+    load1.loading();
+    system("cls");
+    menu();
 /*
     bool check;
     try
