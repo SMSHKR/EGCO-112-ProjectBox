@@ -15,6 +15,7 @@ int main() {
     char b = 188; //╝
     char c = 219; //█
     cout << a << "\n" << b << "\n" << c << endl;
+    cout << "╝\n╔\n█\n" << endl;
    
     cin.get();
     return 0;
