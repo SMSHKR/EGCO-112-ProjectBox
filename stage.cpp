@@ -19,10 +19,10 @@ bool stage(int num) {
                 else check = rand() % 2; //0, 1
             }
             if (check) {
-                HEAD = new Box(true);
+                HEAD = new Key;
                 key = true;
             }
-            else HEAD = new Box;
+            else HEAD = new Ney;
         }
         else {
             bool check = 0;
@@ -33,10 +33,10 @@ bool stage(int num) {
                 else check = rand() % 2; //0, 1
             }
             if (check) {
-                walker->append(new Box(true));
+                walker->append(new Key);
                 key = true;
             } 
-            else walker->append(new Box);
+            else walker->append(new Ney);
         }
     }
 
