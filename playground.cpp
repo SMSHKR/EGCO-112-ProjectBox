@@ -7,6 +7,16 @@
 
 using namespace std;
 
+class Base {
+public:
+    virtual void dis() {cout << "Base" << endl;}
+};
+
+class Derived : public Base {
+public:
+    void dis() {cout << "Derived" << endl;}
+};
+
 int main() {
     
     cout << "For Testing" << endl;
@@ -17,6 +27,11 @@ int main() {
     cout << a << "\n" << b << "\n" << c << endl;
     cout << "╝\n╔\n█\n" << endl;
    
+    Base *ptr;
+    Derived test;
+    ptr = &test;
+    ptr->dis();
+    
     cin.get();
     return 0;
 }
