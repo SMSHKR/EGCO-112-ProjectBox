@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "exception": "cpp",
+        "ios": "cpp",
+        "istream": "cpp",
+        "ostream": "cpp",
+        "streambuf": "cpp",
+        "utility": "cpp",
+        "xiosbase": "cpp",
+        "xstring": "cpp"
+    }
+}

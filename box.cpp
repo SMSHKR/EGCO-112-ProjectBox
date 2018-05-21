@@ -2,8 +2,7 @@
 
 int Box::objectCount = 0;
 
-Box::Box(bool value) {
-    key = value;
+Box::Box() {
     objectCount++;
 }
 

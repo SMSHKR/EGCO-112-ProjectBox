@@ -2,19 +2,27 @@
 #define BOX_HPP_INCLUDED
 
 class Box {
-private:
-    bool key;
-
 public:
-    static int objectCount;
     
     Box *next = 0;
     Box *prev = 0;
-    Box(bool=false); //constructor
+    Box(); //constructor
     
+    virtual void open() = 0;
     void swap();
-    void open();
     void append(Box*);
+
+    static int objectCount;
+};
+
+class Key : public Box {
+public:
+    void open();
+};
+
+class Ney : public Box {
+public:
+    void open();
 };
 
 #endif // BOX_HPP_INCLUDED
