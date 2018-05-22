@@ -2,6 +2,7 @@
 #define BOX_HPP_INCLUDED
 
 class Box {
+friend void swap(Box*&,Box*&);
 public:
     Box(); //constructor
     Box *next = nullptr;
@@ -11,7 +12,7 @@ public:
     virtual void open() = 0;
     virtual void draw(short,short);
     void append(Box*);
-    void swap();
+    void black(short,short);
 };
 
 class Key : public Box {
