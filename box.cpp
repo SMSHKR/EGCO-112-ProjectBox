@@ -9,3 +9,11 @@ Box::Box() {
 void Box::append(Box *NODE) {
     next=NODE;
 }
+
+void Key::open() {
+
+}
+
+void Ney::open() {
+    
+}
