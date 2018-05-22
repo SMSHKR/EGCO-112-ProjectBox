@@ -26,7 +26,12 @@ void Key::draw(short a, short b) {
     x = a;
     y = b;
     gotoxy(x,y);
-    cout << "Key" << endl;
+    textcolor(15);
+    cout <<c<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<c<<endl;
+    cout <<c<<d<<d<<d<<d<<d<<c<<c<<c<<c<<d<<d<<d<<d<<d<<c<<endl;
+    cout <<c<<"              "<<c<<endl;
+    cout <<c<<"              "<<c<<endl;
+    cout <<c<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<c<<endl;
 }
 
 void Key::open() {
@@ -37,7 +42,12 @@ void Ney::draw(short a, short b) {
     x = a;
     y = b;
     gotoxy(x,y);
-    cout << "Ney" << endl;
+    textcolor(12);
+    cout <<c<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<c<<endl;
+    cout <<c<<d<<d<<d<<d<<d<<c<<c<<c<<c<<d<<d<<d<<d<<d<<c<<endl;
+    cout <<c<<"              "<<c<<endl;
+    cout <<c<<"              "<<c<<endl;
+    cout <<c<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<c<<endl;
 }
 
 void Ney::open() {
