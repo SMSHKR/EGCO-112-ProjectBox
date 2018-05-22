@@ -2,19 +2,30 @@
 #define BOX_HPP_INCLUDED
 
 class Box {
-private:
-    bool key;
-
 public:
+    Box(); //constructor
+    Box *next = nullptr;
+    Box *prev = nullptr;
+    short x, y; //COORD
     static int objectCount;
-    
-    Box *next = 0;
-    Box *prev = 0;
-    Box(bool=false); //constructor
-    
+    virtual void open() = 0;
+    virtual void draw(short,short) = 0;
     void swap();
-    void open();
     void append(Box*);
+};
+
+class Key : public Box {
+public:
+    Key();
+    void draw(short,short);
+    void open();
+};
+
+class Ney : public Box {
+public:
+    Ney();
+    void draw(short,short);
+    void open();
 };
 
 #endif // BOX_HPP_INCLUDED

@@ -1,48 +1,78 @@
-#include <cstdlib>
-#include <time.h>
+#include <iostream>
+#include <random>
+#include <chrono>
 #include "Header/box.hpp"
+#include "Header/legacy.hpp"
+using namespace std;
+
+//Prototype
+void Create_Box(Box*&,int);
 
 bool stage(int num) {
 
-    srand(time(NULL));
-    Box *HEAD = NULL;
+    Box *HEAD = nullptr;
+    Create_Box(HEAD,num);
+    cout << "objectCount : " << Box::objectCount << endl;
+    cin.get();
+    system("cls");
+    
+    //Actual Game
+    Box *t = HEAD;
+    int placed = 0;
+    //Initial Position
+    int x = 5;
+    int y = 5;
+    while (placed < Box::objectCount) {
+        t->draw(x,y);
+        t = t->next;
+        //Moving Position
+        x += 10;
+        
+        placed++;
+    }
 
+    //Call Delete to every Box that created before return result
+
+    Box::objectCount = 0; //Reset objectCount after each stage end
+    return 1; //If player passed
+}
+
+void Create_Box(Box *&HEAD, int num) {
     //Create Linked List of Box
+    default_random_engine rand_num{static_cast<long unsigned int>(chrono::high_resolution_clock::now().time_since_epoch().count())};
     bool key = false; //Checked If key generated
-    int created = 0; //Count Box Generate
-    while (created < num) {
-        created += 1;
+    while (Box::objectCount < num) {
         if (!HEAD) {
-            bool check = 0;
+            bool check = false;
             if (!key) {
-                if (created == num) check = 1; //Case of NONE of Boxes have key
-                else check = rand() % 2; //0, 1
+                uniform_int_distribution<> range{Box::objectCount,num-1};
+                if (range(rand_num) == num-1) check = true;
             }
             if (check) {
-                HEAD = new Box(true);
+                HEAD = new Key;
                 key = true;
             }
-            else HEAD = new Box;
+            else HEAD = new Ney;
         }
         else {
-            bool check = 0;
+            bool check = false;
             Box *walker = HEAD;
             while (walker->next) walker = walker->next;
             if (!key) {
-                if (created == num) check = 1; //Case of NONE of Boxes have key
-                else check = rand() % 2; //0, 1
+                uniform_int_distribution<> range{Box::objectCount,num-1};
+                if (range(rand_num) == num-1) check = true;
             }
             if (check) {
-                walker->append(new Box(true));
+                walker->append(new Key);
                 key = true;
             } 
-            else walker->append(new Box);
+            else walker->append(new Ney);
+            //Circle Linked List
+            if (Box::objectCount == num) {
+                if (walker->next) walker = walker->next;
+                walker->next = HEAD;
+                HEAD->prev = walker;
+            }
         }
     }
-
-    //Actual Game
-
-
-    //Call Delete to every Box that created before return result
-    return 1; //If player passed
 }

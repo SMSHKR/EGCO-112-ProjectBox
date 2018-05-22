@@ -1,6 +1,4 @@
 #include <iostream>
-#include <windows.h>
-#include <conio.h>
 #include "Header/menu.hpp"
 #include "Header/box.hpp"
 #include "Header/stage.hpp"
@@ -13,6 +11,8 @@ int main() {
 
     //load load1(200);
     //load1.loading();
+    //system("cls");
+    //menu();
 /*
     bool check;
     try
@@ -44,6 +44,7 @@ int main() {
 */
     bool passed;
     passed = stage(3);
-   
+    if (passed) cout << "objectCount : " << Box::objectCount << endl;
+    cin.get();
     return 0;
 }
