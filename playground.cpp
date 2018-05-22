@@ -11,7 +11,9 @@ using namespace std;
 
 int main() {
     
-    cout << "For Testing" << endl;
+    load a(1000);
+    a.loading();
+    cout << "\nFor Testing" << endl;
     cin.get();
    
     return 0;
