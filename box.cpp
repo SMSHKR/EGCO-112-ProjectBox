@@ -22,20 +22,27 @@ Ney::Ney() {
     cout << "Ney Created" << endl;
 }
 
-void Key::draw(short a, short b) {
+void Box::draw(short a, short b) {
     x = a;
     y = b;
     gotoxy(x,y);
+<<<<<<< HEAD
     textcolor(15);
     cout <<c<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<c<<endl;
     cout <<c<<d<<d<<d<<d<<d<<c<<c<<c<<c<<d<<d<<d<<d<<d<<c<<endl;
     cout <<c<<"              "<<c<<endl;
     cout <<c<<"              "<<c<<endl;
     cout <<c<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<c<<endl;
+=======
+    cout << "Box" << endl;
+>>>>>>> 134d90a1696ef4efc9d3da937d75383a5879a602
 }
 
-void Key::open() {
-
+void Key::draw(short a, short b) {
+    x = a;
+    y = b;
+    gotoxy(x,y);
+    cout << "Key" << endl;
 }
 
 void Ney::draw(short a, short b) {
@@ -48,6 +55,10 @@ void Ney::draw(short a, short b) {
     cout <<c<<"              "<<c<<endl;
     cout <<c<<"              "<<c<<endl;
     cout <<c<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<c<<endl;
+}
+
+void Key::open() {
+
 }
 
 void Ney::open() {

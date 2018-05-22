@@ -1,35 +1,35 @@
 #include <iostream>
 #include <random>
 #include <chrono>
+#include <conio.h>
+#include <windows.h>
 #include "Header/box.hpp"
 #include "Header/legacy.hpp"
 using namespace std;
 
 //Prototype
 void Create_Box(Box*&,int);
+void Place_Box(Box*);
 
 bool stage(int num) {
 
     Box *HEAD = nullptr;
     Create_Box(HEAD,num);
+    
     cout << "objectCount : " << Box::objectCount << endl;
     cin.get();
     system("cls");
     
-    //Actual Game
-    Box *t = HEAD;
-    int placed = 0;
-    //Initial Position
-    int x = 5;
-    int y = 5;
-    while (placed < Box::objectCount) {
-        t->draw(x,y);
-        t = t->next;
-        //Moving Position
-        x += 10;
-        //y += 0;
-        placed++;
-    }
+    Place_Box(HEAD);
+    Sleep(3000);
+    //Waiting for Swap
+    default_random_engine rand_num{static_cast<long unsigned int>(chrono::high_resolution_clock::now().time_since_epoch().count())};
+    uniform_int_distribution<> range{0,Box::objectCount};
+    Box *ch1 = HEAD, *ch2 = HEAD;
+    for (int i=0; i<range(rand_num); i++) ch1 = ch1->next;
+    do {
+        for (int i=0; i<range(rand_num); i++) ch2 = ch2->next;
+    } while (ch1 == ch2);
 
     //Call Delete to every Box that created before return result
 
@@ -74,5 +74,21 @@ void Create_Box(Box *&HEAD, int num) {
                 HEAD->prev = walker;
             }
         }
+    }
+}
+
+void Place_Box(Box *HEAD) {
+    Box *t = HEAD;
+    int placed = 0;
+    //Initial Position
+    int x = 5;
+    int y = 5;
+    while (placed < Box::objectCount) {
+        t->draw(x,y);
+        t = t->next;
+        //Moving Position
+        x += 10;
+        //y += 0;
+        placed++;
     }
 }
