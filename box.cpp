@@ -12,16 +12,6 @@ void Box::append(Box *NODE) {
     NODE->prev = this;
 }
 
-Key::Key() {
-    //Debug
-    cout << " Key Created" << endl;
-}
-
-Ney::Ney() {
-    //Debug
-    cout << "Ney Created" << endl;
-}
-
 void Box::draw(short a, short b) {
     x = a;
     y = b;
