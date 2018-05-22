@@ -10,11 +10,13 @@ using namespace std;
 class Base {
 public:
     virtual void dis() {cout << "Base" << endl;}
+    Base() {cout << "Base Constructed" << endl;}
 };
 
 class Derived : public Base {
 public:
     void dis() {cout << "Derived" << endl;}
+    Derived() {cout << "Derived Constructed" << endl;}
 };
 
 int main() {

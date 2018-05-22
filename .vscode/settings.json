@@ -7,6 +7,9 @@
         "streambuf": "cpp",
         "utility": "cpp",
         "xiosbase": "cpp",
-        "xstring": "cpp"
+        "xstring": "cpp",
+        "iostream": "cpp",
+        "type_traits": "cpp",
+        "xlocnum": "cpp"
     }
 }
