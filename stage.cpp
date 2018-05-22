@@ -2,11 +2,23 @@
 #include <time.h>
 #include "Header/box.hpp"
 
+//Prototype
+void Create_Box(Box*&,int);
+
 bool stage(int num) {
 
     srand(time(NULL));
     Box *HEAD = NULL;
+    Create_Box(HEAD,num);
+    
+    //Actual Game
 
+
+    //Call Delete to every Box that created before return result
+    return 1; //If player passed
+}
+
+void Create_Box(Box *&HEAD, int num) {
     //Create Linked List of Box
     bool key = false; //Checked If key generated
     int created = 0; //Count Box Generate
@@ -39,10 +51,4 @@ bool stage(int num) {
             else walker->append(new Ney);
         }
     }
-
-    //Actual Game
-
-
-    //Call Delete to every Box that created before return result
-    return 1; //If player passed
 }
