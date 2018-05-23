@@ -20,10 +20,14 @@ int main() {
     cout << "╝\n╔\n█\n" << endl;
    
     default_random_engine rand_num{static_cast<long unsigned int>(chrono::high_resolution_clock::now().time_since_epoch().count())};
-    uniform_int_distribution<> range{0,1};
-    for (int i=0; i<10; i++)
+    float seed = 0;
+    for (int i=0; i<10; i++) {
+        uniform_real_distribution<> range{seed,1};
         cout << range(rand_num) << endl;
         //cout << rand_num() << endl;
+        seed += 0.1;
+    }
+        
     
     cin.get();
     return 0;
