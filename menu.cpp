@@ -68,7 +68,7 @@ int menu()
                 choice == 3 ? choice = 1 : choice++;
                 break;
         }
-    } while (true);
+    } while (scroll != '\n');
     
     return choice;
 }
