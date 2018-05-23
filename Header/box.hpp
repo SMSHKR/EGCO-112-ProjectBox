@@ -10,20 +10,18 @@ public:
     static int objectCount;
     virtual void open() = 0;
     virtual void draw(short,short);
-    void swap();
     void append(Box*);
+    void swap();
 };
 
 class Key : public Box {
 public:
-    Key();
     void draw(short,short);
     void open();
 };
 
 class Ney : public Box {
 public:
-    Ney();
     void draw(short,short);
     void open();
 };

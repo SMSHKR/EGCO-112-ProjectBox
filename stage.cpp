@@ -15,11 +15,8 @@ void Swap_Box(Box*);
 bool stage(int num) {
 
     Box *HEAD = nullptr;
-    Create_Box(HEAD,num);
     
-    cout << "objectCount : " << Box::objectCount << endl;
-    cin.get();
-    system("cls");
+    Create_Box(HEAD,num);
     
     Place_Box(HEAD);
     Sleep(3000);
@@ -97,4 +94,5 @@ void Swap_Box(Box *HEAD) {
     do {
         for (int i=0; i<range(rand_num); i++) ch2 = ch2->next;
     } while (ch1 == ch2);
+
 }
