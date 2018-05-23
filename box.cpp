@@ -16,6 +16,14 @@ void Box::swap() {
 
 }
 
+void Box::black(short x, short y) {
+    gotoxy(x,y+0); cout << "                " << endl;
+    gotoxy(x,y+1); cout << "                " << endl;
+    gotoxy(x,y+2); cout << "                " << endl;
+    gotoxy(x,y+3); cout << "                " << endl;
+    gotoxy(x,y+4); cout << "                " << endl;
+}
+
 void Box::draw(short a, short b) {
     x = a;
     y = b;

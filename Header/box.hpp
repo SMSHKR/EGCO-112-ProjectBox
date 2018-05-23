@@ -12,6 +12,7 @@ public:
     virtual void draw(short,short);
     void append(Box*);
     void swap();
+    void black(short,short);
 };
 
 class Key : public Box {

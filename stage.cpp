@@ -10,6 +10,7 @@ using namespace std;
 //Prototype
 void Create_Box(Box*&,int);
 void Place_Box(Box*);
+void Replace_Box(Box*);
 void Swap_Box(Box*);
 
 bool stage(int num) {
@@ -20,7 +21,8 @@ bool stage(int num) {
     
     Place_Box(HEAD);
     Sleep(3000);
-    
+    Replace_Box(HEAD);
+    Sleep(1000);
     Swap_Box(HEAD);
     
 
@@ -83,6 +85,14 @@ void Place_Box(Box *HEAD) {
         x += 25;
         y += 0;
         placed++;
+    }
+}
+
+void Replace_Box(Box *HEAD) {
+    Box *t = HEAD;
+    for (int i=0; i<Box::objectCount; i++) {
+        t->Box::draw(t->x,t->y);
+        t = t->next;
     }
 }
 
