@@ -9,7 +9,7 @@ public:
     short x, y; //COORD
     static int objectCount;
     virtual void open() = 0;
-    virtual void draw(short,short) = 0;
+    virtual void draw(short,short);
     void swap();
     void append(Box*);
 };

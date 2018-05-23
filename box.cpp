@@ -22,6 +22,13 @@ Ney::Ney() {
     cout << "Ney Created" << endl;
 }
 
+void Box::draw(short a, short b) {
+    x = a;
+    y = b;
+    gotoxy(x,y);
+    cout << "Box" << endl;
+}
+
 void Key::draw(short a, short b) {
     x = a;
     y = b;
@@ -29,15 +36,15 @@ void Key::draw(short a, short b) {
     cout << "Key" << endl;
 }
 
-void Key::open() {
-
-}
-
 void Ney::draw(short a, short b) {
     x = a;
     y = b;
     gotoxy(x,y);
     cout << "Ney" << endl;
+}
+
+void Key::open() {
+
 }
 
 void Ney::open() {
