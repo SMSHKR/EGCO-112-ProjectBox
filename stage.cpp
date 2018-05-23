@@ -26,6 +26,22 @@ bool stage(int num) {
     Sleep(1000);
     //Swap_Box(HEAD,0);
     
+    Box *pointer = HEAD;
+    char input = '\0';
+    do {
+        gotoxy(pointer->x+8,pointer->y+7); cout << "^";
+        input = getch();
+        switch(input) {
+            case KEY_RIGHT:
+                gotoxy(pointer->x+8,pointer->y+7); cout << " ";
+                pointer = pointer->next;
+                break;
+            case KEY_LEFT:
+                gotoxy(pointer->x+8,pointer->y+7); cout << " ";
+                pointer = pointer->prev;
+                break;
+        }
+    } while (input != KEY_ENTER);
 
     //Call Delete to every Box that created before return result
     Box *destroyer = HEAD;
@@ -122,7 +138,7 @@ void Swap_Box(Box *HEAD, int count) {
         } while (ch1 == ch2);
         
         Sleep(500);
-        //swap(ch1,ch2);
+        swap(ch1,ch2);
         
         count++;
         Swap_Box(HEAD,count);
