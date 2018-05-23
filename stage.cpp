@@ -25,14 +25,13 @@ bool stage(int num) {
 void Create_Box(Box *&HEAD, int num) {
     //Create Linked List of Box
     default_random_engine rand_num{static_cast<long unsigned int>(chrono::high_resolution_clock::now().time_since_epoch().count())};
-    uniform_int_distribution<> range{0,1};
     bool key = false; //Checked If key generated
     while (Box::objectCount < num) {
         if (!HEAD) {
-            bool check = 0;
+            bool check = false;
             if (!key) {
-                if (Box::objectCount == num - 1) check = 1; //Case of NONE of Boxes have key
-                else check = range(rand_num); //0, 1
+                uniform_int_distribution<> range{Box::objectCount,num-1};
+                if (range(rand_num) == num-1) check = true;
             }
             if (check) {
                 HEAD = new Key;
@@ -41,12 +40,12 @@ void Create_Box(Box *&HEAD, int num) {
             else HEAD = new Ney;
         }
         else {
-            bool check = 0;
+            bool check = false;
             Box *walker = HEAD;
             while (walker->next) walker = walker->next;
             if (!key) {
-                if (Box::objectCount == num - 1) check = 1; //Case of NONE of Boxes have key
-                else check = range(rand_num); //0, 1
+                uniform_int_distribution<> range{Box::objectCount,num-1};
+                if (range(rand_num) == num-1) check = true;
             }
             if (check) {
                 walker->append(new Key);

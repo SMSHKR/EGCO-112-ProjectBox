@@ -43,7 +43,7 @@ int main() {
     }
 */
     bool passed;
-    passed = stage(10);
+    passed = stage(3);
     if (passed) cout << "objectCount : " << Box::objectCount << endl;
     cin.get();
     return 0;
