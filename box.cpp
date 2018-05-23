@@ -12,6 +12,10 @@ void Box::append(Box *NODE) {
     NODE->prev = this;
 }
 
+void Box::swap() {
+    
+}
+
 void Box::draw(short a, short b) {
     x = a;
     y = b;
