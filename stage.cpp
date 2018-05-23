@@ -12,13 +12,13 @@ bool stage(int num) {
 
     Box *HEAD = nullptr;
     Create_Box(HEAD,num);
-    
+    cout << "objectCount : " << Box::objectCount << endl;
+    cin.get();
     //Actual Game
 
 
     //Call Delete to every Box that created before return result
 
-    cout << "objectCount : " << Box::objectCount << endl;
     Box::objectCount = 0; //Reset objectCount after each stage end
     return 1; //If player passed
 }
@@ -55,7 +55,9 @@ void Create_Box(Box *&HEAD, int num) {
             else walker->append(new Ney);
             //Circle Linked List
             if (Box::objectCount == num) {
-                
+                if (walker->next) walker = walker->next;
+                walker->next = HEAD;
+                HEAD->prev = walker;
             }
         }
     }
