@@ -9,9 +9,9 @@ using namespace std;
 
 int main() {
 
-    load load1(200);
-    load1.loading();
-    system("cls");
+    //load load1(200);
+    //load1.loading();
+    //system("cls");
     //menu();
 /*
     bool check;
@@ -43,7 +43,7 @@ int main() {
     }
 */
     bool passed;
-    passed = stage(3);
+    passed = stage(10);
     if (passed) cout << "objectCount : " << Box::objectCount << endl;
     cin.get();
     return 0;

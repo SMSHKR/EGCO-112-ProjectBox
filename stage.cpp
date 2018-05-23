@@ -52,6 +52,10 @@ void Create_Box(Box *&HEAD, int num) {
                 key = true;
             } 
             else walker->append(new Ney);
+            //Circle Linked List
+            if (Box::objectCount == num) {
+                
+            }
         }
     }
 }

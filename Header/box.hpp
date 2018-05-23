@@ -17,11 +17,13 @@ public:
 
 class Key : public Box {
 public:
+    Key();
     void open();
 };
 
 class Ney : public Box {
 public:
+    Ney();
     void open();
 };
 
