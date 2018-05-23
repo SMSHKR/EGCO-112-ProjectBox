@@ -4,13 +4,34 @@
 #include "Header/legacy.hpp"
 using namespace std;
 
-void swap(Box *ch1, Box *ch2) {
+void swap(Box *&ch1, Box *&ch2) {
     ch1->black(ch1->x,ch1->y);
     ch2->black(ch2->x,ch2->y);
-    Sleep(500);
-    //Swap Process
+
+    Box *ptmp;
+    //Swap *next
+    ptmp = ch1->next;
+    ch1->next = ch2->next;
+    ch2->next = ptmp;
+    //Swap *prev
+    ptmp = ch1->prev;
+    ch1->prev = ch2->prev;
+    ch2->prev = ptmp;
+
+    int tmp;
+    //Swap x
+    tmp = ch1->x;
+    ch1->x = ch2->x;
+    ch2->x = tmp;
+    //Swap y
+    tmp = ch1->y;
+    ch1->y = ch2->y;
+    ch2->y = tmp;
 
     //ReDraw Box
+    Sleep(500);
+    ch1->draw(ch1->x,ch1->y);
+    ch2->draw(ch2->x,ch2->y);
 }
 
 int Box::objectCount = 0;

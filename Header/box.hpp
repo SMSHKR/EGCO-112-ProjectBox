@@ -2,7 +2,7 @@
 #define BOX_HPP_INCLUDED
 
 class Box {
-friend void swap(Box*,Box*);
+friend void swap(Box*&,Box*&);
 public:
     Box(); //constructor
     Box *next = nullptr;
