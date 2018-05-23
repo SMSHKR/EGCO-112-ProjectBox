@@ -44,6 +44,7 @@ int main() {
 */
     bool passed;
     passed = stage(3);
+    if (passed) cout << "Passed" << endl;
    
     return 0;
 }

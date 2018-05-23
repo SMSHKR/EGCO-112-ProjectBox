@@ -1,13 +1,11 @@
 #ifndef BOX_HPP_INCLUDED 
 #define BOX_HPP_INCLUDED
 
-#define NULL nullptr
-
 class Box {
 public:
     
-    Box *next = NULL;
-    Box *prev = NULL;
+    Box *next = nullptr;
+    Box *prev = nullptr;
     Box(); //constructor
     
     virtual void open() = 0;

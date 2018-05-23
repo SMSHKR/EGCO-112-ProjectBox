@@ -7,8 +7,8 @@ void Create_Box(Box*&,int);
 
 bool stage(int num) {
 
-    srand(time(NULL));
-    Box *HEAD = NULL;
+    srand(time(nullptr));
+    Box *HEAD = nullptr;
     Create_Box(HEAD,num);
     
     //Actual Game
