@@ -30,6 +30,7 @@ bool stage(int num) {
         //y += 0;
         placed++;
     }
+    
 
     //Call Delete to every Box that created before return result
 
