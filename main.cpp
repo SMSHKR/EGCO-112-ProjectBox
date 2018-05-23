@@ -22,7 +22,8 @@ int main() {
             int choice = menu();
             switch (choice)
             {
-            case 1: //start game
+            case 1: 
+                system("cls");
                 break;
             case 2:
                 instruction();
