@@ -73,3 +73,7 @@ int menu()
     
     return choice;
 }
+
+void instruction() {
+    
+}
