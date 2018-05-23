@@ -80,8 +80,8 @@ void Place_Box(Box *HEAD) {
         t->draw(x,y);
         t = t->next;
         //Moving Position
-        x += 10;
-        //y += 0;
+        x += 25;
+        y += 0;
         placed++;
     }
 }
