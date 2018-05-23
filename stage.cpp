@@ -10,6 +10,7 @@ using namespace std;
 //Prototype
 void Create_Box(Box*&,int);
 void Place_Box(Box*);
+void Swap_Box(Box*);
 
 bool stage(int num) {
 
@@ -22,14 +23,9 @@ bool stage(int num) {
     
     Place_Box(HEAD);
     Sleep(3000);
-    //Waiting for Swap
-    default_random_engine rand_num{static_cast<long unsigned int>(chrono::high_resolution_clock::now().time_since_epoch().count())};
-    uniform_int_distribution<> range{0,Box::objectCount};
-    Box *ch1 = HEAD, *ch2 = HEAD;
-    for (int i=0; i<range(rand_num); i++) ch1 = ch1->next;
-    do {
-        for (int i=0; i<range(rand_num); i++) ch2 = ch2->next;
-    } while (ch1 == ch2);
+    
+    Swap_Box(HEAD);
+    
 
     //Call Delete to every Box that created before return result
 
@@ -91,4 +87,14 @@ void Place_Box(Box *HEAD) {
         //y += 0;
         placed++;
     }
+}
+
+void Swap_Box(Box *HEAD) {
+    default_random_engine rand_num{static_cast<long unsigned int>(chrono::high_resolution_clock::now().time_since_epoch().count())};
+    uniform_int_distribution<> range{0,Box::objectCount};
+    Box *ch1 = HEAD, *ch2 = HEAD;
+    for (int i=0; i<range(rand_num); i++) ch1 = ch1->next;
+    do {
+        for (int i=0; i<range(rand_num); i++) ch2 = ch2->next;
+    } while (ch1 == ch2);
 }
