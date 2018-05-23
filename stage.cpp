@@ -2,6 +2,7 @@
 #include <random>
 #include <chrono>
 #include "Header/box.hpp"
+#include "Header/legacy.hpp"
 using namespace std;
 
 //Prototype
