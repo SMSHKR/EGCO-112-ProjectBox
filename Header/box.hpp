@@ -3,27 +3,28 @@
 
 class Box {
 public:
-    
+    Box(); //constructor
     Box *next = nullptr;
     Box *prev = nullptr;
-    Box(); //constructor
-    
+    short x, y; //COORD
+    static int objectCount;
     virtual void open() = 0;
+    virtual void draw(short,short) = 0;
     void swap();
     void append(Box*);
-
-    static int objectCount;
 };
 
 class Key : public Box {
 public:
     Key();
+    void draw(short,short);
     void open();
 };
 
 class Ney : public Box {
 public:
     Ney();
+    void draw(short,short);
     void open();
 };
 
