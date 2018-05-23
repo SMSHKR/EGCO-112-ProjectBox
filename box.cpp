@@ -15,7 +15,7 @@ void Box::append(Box *NODE) {
 
 Key::Key() {
     //Debug
-    cout << "Key Created" << endl;
+    cout << " Key Created" << endl;
 }
 
 Ney::Ney() {

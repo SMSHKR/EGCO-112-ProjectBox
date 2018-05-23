@@ -31,7 +31,7 @@ void Create_Box(Box *&HEAD, int num) {
         if (!HEAD) {
             bool check = 0;
             if (!key) {
-                if (Box::objectCount == num) check = 1; //Case of NONE of Boxes have key
+                if (Box::objectCount == num - 1) check = 1; //Case of NONE of Boxes have key
                 else check = range(rand_num); //0, 1
             }
             if (check) {
@@ -45,7 +45,7 @@ void Create_Box(Box *&HEAD, int num) {
             Box *walker = HEAD;
             while (walker->next) walker = walker->next;
             if (!key) {
-                if (Box::objectCount == num) check = 1; //Case of NONE of Boxes have key
+                if (Box::objectCount == num - 1) check = 1; //Case of NONE of Boxes have key
                 else check = range(rand_num); //0, 1
             }
             if (check) {
