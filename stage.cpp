@@ -4,6 +4,7 @@
 #include <conio.h>
 #include <windows.h>
 #include "Header/box.hpp"
+#include "Header/stage.hpp"
 #include "Header/legacy.hpp"
 using namespace std;
 
