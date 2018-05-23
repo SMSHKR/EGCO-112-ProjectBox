@@ -11,6 +11,12 @@ using namespace std;
 
 int main() {
     
+<<<<<<< HEAD
+    load a(1000);
+    a.loading();
+    cout << "\nFor Testing" << endl;
+    cin.get();
+=======
     cout << "For Testing" << endl;
 
     char a = 201; //╔
@@ -18,6 +24,7 @@ int main() {
     char c = 219; //█
     cout << a << "\n" << b << "\n" << c << endl;
     cout << "╝\n╔\n█\n" << endl;
+>>>>>>> 2b3423f6303e4efed4b89da55ed53edf6f7bb1fa
    
     default_random_engine rand_num{static_cast<long unsigned int>(chrono::high_resolution_clock::now().time_since_epoch().count())};
     float seed = 0;

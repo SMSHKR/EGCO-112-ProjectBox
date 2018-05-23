@@ -3,7 +3,7 @@
 
 class load {
 private:
-    int speed;
+    int delay;
 public:
     void loading();
     load(int);    

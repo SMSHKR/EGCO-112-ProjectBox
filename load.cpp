@@ -5,7 +5,7 @@
 
 using namespace std;
 
-load::load(int i) { speed = i; }
+load::load(int i) { delay = i; }
 
 void load::loading()
 {
@@ -22,6 +22,6 @@ void load::loading()
     for (int i = 0; i <= 25; i++)
     {
         cout << b;
-        Sleep(speed);
+        Sleep(delay);
     }
 }
