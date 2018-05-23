@@ -7,12 +7,6 @@
 #include "Header/legacy.hpp"
 using namespace std;
 
-//Prototype
-void Create_Box(Box*&,int);
-void Place_Box(Box*);
-void Replace_Box(Box*);
-void Swap_Box(Box*,int);
-
 bool stage(int num) {
 
     Box *HEAD = nullptr;

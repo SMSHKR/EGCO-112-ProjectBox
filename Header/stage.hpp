@@ -7,5 +7,9 @@
 #define KEY_DOWN 80
 
 bool stage(int);
+void Create_Box(Box*&,int);
+void Place_Box(Box*);
+void Replace_Box(Box*);
+void Swap_Box(Box*,int);
 
 #endif // STAGE_HPP_INCLUDED
