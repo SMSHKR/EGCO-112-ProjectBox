@@ -1,7 +1,17 @@
 #include <iostream>
+#include <windows.h>
 #include "Header/box.hpp"
 #include "Header/legacy.hpp"
 using namespace std;
+
+void swap(Box *ch1, Box *ch2) {
+    ch1->black(ch1->x,ch1->y);
+    ch2->black(ch2->x,ch2->y);
+    Sleep(500);
+    //Swap Process
+
+    //ReDraw Box
+}
 
 int Box::objectCount = 0;
 
@@ -10,10 +20,6 @@ Box::Box() { objectCount++; }
 void Box::append(Box *NODE) {
     next=NODE;
     NODE->prev = this;
-}
-
-void Box::swap() {
-
 }
 
 void Box::black(short x, short y) {

@@ -11,7 +11,7 @@ using namespace std;
 void Create_Box(Box*&,int);
 void Place_Box(Box*);
 void Replace_Box(Box*);
-void Swap_Box(Box*);
+void Swap_Box(Box*,int);
 
 bool stage(int num) {
 
@@ -98,14 +98,20 @@ void Replace_Box(Box *HEAD) {
 
 void Swap_Box(Box *HEAD, int count) {
     if (count < Box::objectCount) {
+        
         default_random_engine rand_num{static_cast<long unsigned int>(chrono::high_resolution_clock::now().time_since_epoch().count())};
         uniform_int_distribution<> range{0,Box::objectCount};
+        
         Box *ch1 = HEAD, *ch2 = HEAD;
+        
         for (int i=0; i<range(rand_num); i++) ch1 = ch1->next;
         do {
             for (int i=0; i<range(rand_num); i++) ch2 = ch2->next;
         } while (ch1 == ch2);
-
+        
+        Sleep(500);
+        swap(ch1,ch2);
+        
         count++;
         Swap_Box(HEAD,count);
     }
