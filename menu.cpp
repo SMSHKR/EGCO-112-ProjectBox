@@ -88,14 +88,14 @@ gotoxy(6,9);  cout <<"88 88     88 d8'   .8P    88    Y8.   .8P Y8.   .88    88 
 gotoxy(6,10); cout <<"dP dP     dP  Y88888P     dP    `Y88888P'  Y88888P'    dP    dP  `8888P'  dP     dP " << endl;
     
 textcolor(14);
-gotoxy(18,13); cout <<c<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<c<<endl;
-gotoxy(18,14); cout <<c<<d<<d<<d<<d<<d<<c<<c<<c<<c<<d<<d<<d<<d<<d<<c<<endl;
-gotoxy(18,15); cout <<c<<"              "<<c<<endl;
-gotoxy(18,16); cout <<c<<"              "<<c<<endl;
-gotoxy(18,17); cout <<c<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<c<<endl;
+gotoxy(35,13); cout <<c<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<c<<endl;
+gotoxy(35,14); cout <<c<<d<<d<<d<<d<<d<<c<<c<<c<<c<<d<<d<<d<<d<<d<<c<<endl;
+gotoxy(35,15); cout <<c<<"              "<<c<<endl;
+gotoxy(35,16); cout <<c<<"              "<<c<<endl;
+gotoxy(35,17); cout <<c<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<c<<endl;
 
 
-้cin.get();
+
 
 
 

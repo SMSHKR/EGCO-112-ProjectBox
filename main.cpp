@@ -25,7 +25,9 @@ int main() {
             case 1: //start game
                 break;
             case 2:
+                system("cls");
                 instruction();
+                cin.get();
                 goto Menu;
                 break;
             case 3:
