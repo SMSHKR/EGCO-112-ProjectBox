@@ -1,6 +1,6 @@
 #include <iostream>
-#include <cstdlib>
-#include <ctime>
+#include <random>
+#include <chrono>
 #include "Header/box.hpp"
 using namespace std;
 
@@ -9,7 +9,6 @@ void Create_Box(Box*&,int);
 
 bool stage(int num) {
 
-    srand(time(nullptr));
     Box *HEAD = nullptr;
     Create_Box(HEAD,num);
     
@@ -25,13 +24,15 @@ bool stage(int num) {
 
 void Create_Box(Box *&HEAD, int num) {
     //Create Linked List of Box
+    default_random_engine rand_num{static_cast<long unsigned int>(chrono::high_resolution_clock::now().time_since_epoch().count())};
+    uniform_int_distribution<> range{0,1};
     bool key = false; //Checked If key generated
     while (Box::objectCount < num) {
         if (!HEAD) {
             bool check = 0;
             if (!key) {
                 if (Box::objectCount == num) check = 1; //Case of NONE of Boxes have key
-                else check = rand() % 2; //0, 1
+                else check = range(rand_num); //0, 1
             }
             if (check) {
                 HEAD = new Key;
@@ -45,7 +46,7 @@ void Create_Box(Box *&HEAD, int num) {
             while (walker->next) walker = walker->next;
             if (!key) {
                 if (Box::objectCount == num) check = 1; //Case of NONE of Boxes have key
-                else check = rand() % 2; //0, 1
+                else check = range(rand_num); //0, 1
             }
             if (check) {
                 walker->append(new Key);
