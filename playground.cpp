@@ -1,4 +1,6 @@
 #include <iostream>
+#include <random>
+#include <chrono>
 #include "Header/menu.hpp"
 #include "Header/box.hpp"
 #include "Header/stage.hpp"
@@ -6,18 +8,6 @@
 #include "Header/legacy.hpp"
 
 using namespace std;
-
-class Base {
-public:
-    virtual void dis() {cout << "Base" << endl;}
-    Base() {cout << "Base Constructed" << endl;}
-};
-
-class Derived : public Base {
-public:
-    void dis() {cout << "Derived" << endl;}
-    Derived() {cout << "Derived Constructed" << endl;}
-};
 
 int main() {
     
@@ -29,10 +19,11 @@ int main() {
     cout << a << "\n" << b << "\n" << c << endl;
     cout << "╝\n╔\n█\n" << endl;
    
-    Base *ptr;
-    Derived test;
-    ptr = &test;
-    ptr->dis();
+    default_random_engine rand_num{static_cast<long unsigned int>(chrono::high_resolution_clock::now().time_since_epoch().count())};
+    uniform_int_distribution<> range{0,1};
+    for (int i=0; i<10; i++)
+        cout << range(rand_num) << endl;
+        //cout << rand_num() << endl;
     
     cin.get();
     return 0;

@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cstdlib>
-#include <time.h>
+#include <ctime>
 #include "Header/box.hpp"
 using namespace std;
 
