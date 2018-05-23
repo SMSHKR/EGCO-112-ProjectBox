@@ -37,6 +37,7 @@ void swap(Box *&ch1, Box *&ch2) {
 int Box::objectCount = 0;
 
 Box::Box() { objectCount++; }
+Box::~Box() { objectCount--; }
 
 void Box::append(Box *NODE) {
     next=NODE;

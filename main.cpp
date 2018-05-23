@@ -46,6 +46,10 @@ int main() {
 
     bool passed;
     passed = stage(3);
+    if (passed) {
+        system("cls");
+        cout << "objectCount: " << Box::objectCount << endl;
+    }
     cin.get();
     Exit:
     return 0;

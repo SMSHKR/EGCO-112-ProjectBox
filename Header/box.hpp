@@ -5,6 +5,7 @@ class Box {
 friend void swap(Box*&,Box*&);
 public:
     Box(); //constructor
+    virtual ~Box(); //destructor
     Box *next = nullptr;
     Box *prev = nullptr;
     short x, y; //COORD

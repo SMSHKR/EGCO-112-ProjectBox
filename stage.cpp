@@ -18,12 +18,23 @@ bool stage(int num) {
     Sleep(3000);
     Replace_Box(HEAD);
     Sleep(1000);
-    Swap_Box(HEAD,0);
+    //Swap_Box(HEAD,0);
     
 
     //Call Delete to every Box that created before return result
+    Box *destroyer = HEAD;
+    while (destroyer) {
+        if (Box::objectCount > 1) {
+            destroyer = destroyer->next;
+            delete destroyer->prev;
+            destroyer->prev = nullptr;
+        }
+        else { 
+            delete destroyer;
+            destroyer = nullptr;
+        }
 
-    Box::objectCount = 0; //Reset objectCount after each stage end
+    }
     return 1; //If player passed
 }
 
@@ -105,7 +116,7 @@ void Swap_Box(Box *HEAD, int count) {
         } while (ch1 == ch2);
         
         Sleep(500);
-        swap(ch1,ch2);
+        //swap(ch1,ch2);
         
         count++;
         Swap_Box(HEAD,count);
