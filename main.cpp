@@ -5,41 +5,14 @@
 #include "Header/stage.hpp"
 #include "Header/load.hpp"
 #include "Header/legacy.hpp"
-
-
 using namespace std;
 
 int main() {
 
-    load load1(100);
-    load1.loading();
-    bool check;
-    try
-    {
-        check = false;
-        do
-        {
-            system("cls");
-            int choice = menu();
-            switch (choice)
-            {
-            case 1: //maybe start game
-                break;
-            case 2: //maybe instruction/howto
-                break;
-            case 3: //meaybe exit?
-                break;
-            default: //throw exceoption
-                throw "cin >> ERROR";
-            }
-        } while (check);
-    }
-    catch (...)
-    {
-        cin.clear();
-        cin.ignore(50,'\n');
-        check = true;
-    }
+    //load load1(100);
+    //load1.loading();
+    bool check = false;
+    menu();
 
     bool passed;
     passed = stage(3);

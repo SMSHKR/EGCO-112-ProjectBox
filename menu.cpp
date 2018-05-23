@@ -4,6 +4,11 @@
 #include "Header/legacy.hpp"
 using namespace std;
 
+#define KEY_UP 72
+#define KEY_LEFT 75
+#define KEY_RIGHT 77
+#define KEY_DOWN 80
+
 int menu() 
 {
     textcolor(14);
@@ -14,11 +19,56 @@ int menu()
     gotoxy(6,9);  cout <<" 88    .88 Y8.   .8P 88    88    Y8.   .8P 88     88 88     88 88     88 Y8.   .8P 88.d8P8.d8P  88     88 " << endl;
     gotoxy(6,10); cout <<" 88888888P  `8888P'  dP    dP    `Y88888P' dP     dP dP     dP dP     dP  `8888P'  8888' Y88'   dP     dP " << endl;
 
-    cout<<"\n\n1.Start\n";
-    cout<<"2.Instruction\n";
-    cout<<"3.Exit\n";
+    gotoxy(44,18); cout<<"Start";
+    gotoxy(44,20); cout<<"Instruction";
+    gotoxy(44,22); cout<<"Exit";
 
-    int choice;
-    cin >> choice; //may change workaround to sth like getch()
+    int choice = 1;
+    char scroll;
+    do {
+        switch(choice) {
+            case 1:
+                gotoxy(42,18); cout << ">";
+                break;
+            case 2:
+                gotoxy(42,20); cout << ">";
+                break;
+            case 3:
+                gotoxy(42,22); cout << ">";
+                break;
+        }
+        scroll = getch();
+        switch(scroll) {
+            case KEY_UP:
+                switch(choice) {
+                    case 1:
+                        gotoxy(42,18); cout << " ";
+                        break;
+                    case 2:
+                        gotoxy(42,20); cout << " ";
+                        break;
+                    case 3:
+                        gotoxy(42,22); cout << " ";
+                        break;
+                }
+                choice == 1 ? choice = 3 : choice--;
+                break;
+            case KEY_DOWN:
+                switch(choice) {
+                    case 1:
+                        gotoxy(42,18); cout << " ";
+                        break;
+                    case 2:
+                        gotoxy(42,20); cout << " ";
+                        break;
+                    case 3:
+                        gotoxy(42,22); cout << " ";
+                        break;
+                }
+                choice == 3 ? choice = 1 : choice++;
+                break;
+        }
+    } while (true);
+    
     return choice;
 }
