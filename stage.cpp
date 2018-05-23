@@ -14,8 +14,22 @@ bool stage(int num) {
     Create_Box(HEAD,num);
     cout << "objectCount : " << Box::objectCount << endl;
     cin.get();
+    system("cls");
+    
     //Actual Game
-
+    Box *t = HEAD;
+    int placed = 0;
+    //Initial Position
+    int x = 5;
+    int y = 5;
+    while (placed < Box::objectCount) {
+        t->draw(x,y);
+        t = t->next;
+        //Moving Position
+        x += 10;
+        
+        placed++;
+    }
 
     //Call Delete to every Box that created before return result
 
