@@ -27,7 +27,7 @@ bool stage(int num) {
         t = t->next;
         //Moving Position
         x += 10;
-        
+        //y += 0;
         placed++;
     }
 
