@@ -24,7 +24,4 @@ int menu()
     int choice;
     cin >> choice; //may change workaround to sth like getch()
     return choice;
-
-
-
 }
