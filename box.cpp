@@ -8,6 +8,7 @@ Box::Box() {
 
 void Box::append(Box *NODE) {
     next=NODE;
+    NODE->prev = this;
 }
 
 void Key::open() {
