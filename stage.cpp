@@ -113,7 +113,10 @@ void Place_Box(Box *HEAD) {
         t = t->next;
         //Moving Position
         x += 23;
-        y += 0;
+        if ( (i+1)%5 == 0 && i != 0) {
+            x = 5;
+            y += 10;
+        }
     }
 }
 

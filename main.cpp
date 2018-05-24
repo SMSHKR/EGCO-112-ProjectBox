@@ -32,7 +32,7 @@ int main() {
     
     Game:
     bool passed;
-    passed = stage(5);
+    passed = stage(15);
     system("cls");
     if (passed) cout << "Passed" << endl;
     else cout << "Failed" << endl;
