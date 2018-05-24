@@ -36,9 +36,17 @@ bool stage(int num) {
                 pointer->move_cursor();
                 pointer = pointer->next;
                 break;
+            case KEY_DOWN:
+                pointer->move_cursor();
+                for (int i=0; i<5; i++) pointer = pointer->next;
+                break;
             case KEY_LEFT:
                 pointer->move_cursor();
                 pointer = pointer->prev;
+                break;
+            case KEY_UP:
+                pointer->move_cursor();
+                for (int i=0; i<5; i++) pointer = pointer->prev;
                 break;
         }
     } while (input != KEY_ENTER);
