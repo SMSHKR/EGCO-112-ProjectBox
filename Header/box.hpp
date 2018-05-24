@@ -21,7 +21,7 @@ public:
     void move_cursor();
     void setxy(short,short);
     void append(Box*);
-    bool open();
+    bool open(Box*&,Box*);
 };
 
 #endif // BOX_HPP_INCLUDED
