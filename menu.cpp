@@ -218,11 +218,11 @@ void result(bool passed) {
     }
     else {
         textcolor(14);
-        gotoxy(46,10); cout<<"N   N  OOO   OOO  BBBB " ;
-        gotoxy(46,11); cout<<"NN  N O   O O   O B   B" ;
-        gotoxy(46,12); cout<<"N N N O   O O   O BBBB " ;
-        gotoxy(46,13); cout<<"N  NN O   O O   O B   B" ;
-        gotoxy(46,14); cout<<"N   N  OOO   OOO  BBBB " ;
+        gotoxy(46,10); cout<<"BBBB   OOO   OOO  M      M  "  ;
+        gotoxy(46,11); cout<<"B   B O   O O   O M M  M M  " ;
+        gotoxy(46,12); cout<<"BBBB  O   O O   O M  M   M  "  ;
+        gotoxy(46,13); cout<<"B   B O   O O   O M      M  "  ;
+        gotoxy(46,14); cout<<"BBBB   OOO   OOO  M      M  " ;
     }
     cin.get();
 }
