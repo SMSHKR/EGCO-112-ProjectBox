@@ -8,9 +8,8 @@
             "type": "shell",
             "command": "g++",
             "args": [
-                "-g",
-                "-Og",
-                "-Wall",
+                "-s",
+                "-Os",
                 "main.cpp",
                 "load.cpp",
                 "legacy.cpp",
