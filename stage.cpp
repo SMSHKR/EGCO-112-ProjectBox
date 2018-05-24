@@ -43,7 +43,8 @@ bool stage(int num) {
         }
     } while (input != KEY_ENTER);
 
-    //Call Delete to every Box that created before return result
+
+
     Box *destroyer = HEAD;
     while (destroyer) {
         if (Box::objectCount > 1) {

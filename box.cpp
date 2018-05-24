@@ -9,10 +9,6 @@ void swap(Box *&ch1, Box *&ch2) {
     ch1->black();
     ch2->black();
 
-    //Swap x,y
-    std::swap(ch1->x,ch2->x);
-    std::swap(ch1->y,ch2->y);
-
     //Swap linker
     std::swap(ch1->key,ch2->key);
 
