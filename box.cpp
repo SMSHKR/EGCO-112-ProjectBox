@@ -13,7 +13,7 @@ void swap(Box *&ch1, Box *&ch2) {
     std::swap(ch1->key,ch2->key);
 
     //ReDraw Box
-    Sleep(500);
+    Sleep(300);
     ch1->draw();
     ch2->draw();
 }
