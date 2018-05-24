@@ -24,7 +24,7 @@ bool stage(int num) {
     Sleep(3000);
     Replace_Box(HEAD);
     Sleep(1000);
-    Swap_Box(HEAD,0);
+    //Swap_Box(HEAD,0);
     
     Box *pointer = HEAD;
     char input = '\0';
