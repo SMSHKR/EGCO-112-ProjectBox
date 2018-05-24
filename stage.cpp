@@ -24,20 +24,20 @@ bool stage(int num) {
     Sleep(3000);
     Replace_Box(HEAD);
     Sleep(1000);
-    //Swap_Box(HEAD,0);
+    Swap_Box(HEAD,0);
     
     Box *pointer = HEAD;
     char input = '\0';
     do {
-        gotoxy(pointer->x+8,pointer->y+7); cout << "^";
+        pointer->draw_cursor();
         input = getch();
         switch(input) {
             case KEY_RIGHT:
-                gotoxy(pointer->x+8,pointer->y+7); cout << " ";
+                pointer->move_cursor();
                 pointer = pointer->next;
                 break;
             case KEY_LEFT:
-                gotoxy(pointer->x+8,pointer->y+7); cout << " ";
+                pointer->move_cursor();
                 pointer = pointer->prev;
                 break;
         }
@@ -72,10 +72,10 @@ void Create_Box(Box *&HEAD, int num) {
                 if (range(rand_num) == num-1) check = true;
             }
             if (check) {
-                HEAD = new Key;
+                HEAD = new Box(true);
                 key = true;
             }
-            else HEAD = new Ney;
+            else HEAD = new Box;
         }
         else {
             bool check = false;
@@ -86,10 +86,10 @@ void Create_Box(Box *&HEAD, int num) {
                 if (range(rand_num) == num-1) check = true;
             }
             if (check) {
-                walker->append(new Key);
+                walker->append(new Box(true));
                 key = true;
             } 
-            else walker->append(new Ney);
+            else walker->append(new Box);
             //Circle Linked List
             if (Box::objectCount == num) {
                 if (walker->next) walker = walker->next;
@@ -102,24 +102,23 @@ void Create_Box(Box *&HEAD, int num) {
 
 void Place_Box(Box *HEAD) {
     Box *t = HEAD;
-    int placed = 0;
     //Initial Position
-    int x = 5;
-    int y = 5;
-    while (placed < Box::objectCount) {
-        t->draw(x,y);
+    short x = 5;
+    short y = 5;
+    for (int i=0; i < Box::objectCount; i++) {
+        t->setxy(x,y);
+        t->draw_color();
         t = t->next;
         //Moving Position
         x += 25;
         y += 0;
-        placed++;
     }
 }
 
 void Replace_Box(Box *HEAD) {
     Box *t = HEAD;
     for (int i=0; i<Box::objectCount; i++) {
-        t->Box::draw(t->x,t->y);
+        t->draw();
         t = t->next;
     }
 }

@@ -3,28 +3,24 @@
 
 class Box {
 friend void swap(Box*&,Box*&);
+private:
+    bool key;
+    short x, y; //COORD
 public:
-    Box(); //constructor
-    virtual ~Box(); //destructor
     Box *next = nullptr;
     Box *prev = nullptr;
-    short x, y; //COORD
     static int objectCount;
-    virtual void open() = 0;
-    virtual void draw(short,short);
+    
+    Box(bool=false); //constructor
+    ~Box(); //destructor
+
+    void black();
+    void draw();
+    void draw_color();
+    void draw_cursor();
+    void move_cursor();
+    void setxy(short,short);
     void append(Box*);
-    void black(short,short);
-};
-
-class Key : public Box {
-public:
-    void draw(short,short);
-    void open();
-};
-
-class Ney : public Box {
-public:
-    void draw(short,short);
     void open();
 };
 
