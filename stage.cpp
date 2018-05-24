@@ -24,7 +24,11 @@ bool stage(int num) {
     Sleep(100*Box::objectCount);
     Replace_Box(HEAD);
     Sleep(1000);
-    Swap_Box(HEAD,0);
+
+    default_random_engine rand_num{static_cast<long unsigned int>(chrono::high_resolution_clock::now().time_since_epoch().count())};
+    uniform_int_distribution<> range{0,Box::objectCount};
+    int SwapCount = Box::objectCount + range(rand_num);
+    Swap_Box(HEAD,SwapCount);
     
     Box *pointer = HEAD;
     char input = '\0';
@@ -137,7 +141,7 @@ void Replace_Box(Box *HEAD) {
 }
 
 void Swap_Box(Box *HEAD, int count) {
-    if (count < Box::objectCount) {
+    if (count) {
         
         default_random_engine rand_num{static_cast<long unsigned int>(chrono::high_resolution_clock::now().time_since_epoch().count())};
         uniform_int_distribution<> range{1,Box::objectCount};
@@ -152,7 +156,7 @@ void Swap_Box(Box *HEAD, int count) {
         Sleep(300);
         swap(ch1,ch2);
         
-        count++;
+        count--;
         Swap_Box(HEAD,count);
     }
 }
