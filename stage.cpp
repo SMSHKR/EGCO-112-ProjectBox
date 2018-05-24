@@ -24,12 +24,12 @@ bool stage(int num) {
     Place_Box(HEAD);
     Sleep(1000 + Box::objectCount*100);
     Replace_Box(HEAD);
-    Sleep(1000);
+    /*Sleep(1000);
 
     default_random_engine rand_num{static_cast<long unsigned int>(chrono::high_resolution_clock::now().time_since_epoch().count())};
     uniform_int_distribution<> range{0,Box::objectCount};
     int SwapCount = Box::objectCount + range(rand_num);
-    Swap_Box(HEAD,SwapCount);
+    Swap_Box(HEAD,SwapCount);*/
     
     do {
         Box *pointer = HEAD;
@@ -56,13 +56,10 @@ bool stage(int num) {
                     break;
             }
         } while (input != KEY_ENTER);
-        bool correct = pointer->open(HEAD,pointer);
-        if (correct) key--;
-        else {
-            passed = false;
-            break;
-        }
-    } while (key);
+        if (pointer->open(HEAD,pointer)) key--;
+        else passed = false;
+        delete pointer;
+    } while (key && passed);
 
     Box *destroyer = HEAD;
     while (destroyer) {

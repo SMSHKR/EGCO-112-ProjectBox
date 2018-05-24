@@ -31,7 +31,6 @@ bool Box::open(Box *&HEAD, Box *pointer) {
     pointer->next->prev = pointer->prev;
     pointer->prev->next = pointer->next;
     if (HEAD == this) HEAD = HEAD->next;
-    delete this;
 
     return key;
 }
