@@ -18,17 +18,17 @@ bool stage(int num) {
 
     Box *HEAD = nullptr;
     
-    Create_Box(HEAD,num);
+    int key = Create_Box(HEAD,num);
     
     Place_Box(HEAD);
-    Sleep(100*Box::objectCount);
-    Replace_Box(HEAD);
+    Sleep(1000 + Box::objectCount*100);
+    //Replace_Box(HEAD);
     Sleep(1000);
 
     default_random_engine rand_num{static_cast<long unsigned int>(chrono::high_resolution_clock::now().time_since_epoch().count())};
     uniform_int_distribution<> range{0,Box::objectCount};
     int SwapCount = Box::objectCount + range(rand_num);
-    Swap_Box(HEAD,SwapCount);
+    //Swap_Box(HEAD,SwapCount);
     
     Box *pointer = HEAD;
     char input = '\0';
@@ -74,20 +74,18 @@ bool stage(int num) {
     return passed;
 }
 
-void Create_Box(Box *&HEAD, int num) {
+int Create_Box(Box *&HEAD, int num) {
     //Create Linked List of Box
     default_random_engine rand_num{static_cast<long unsigned int>(chrono::high_resolution_clock::now().time_since_epoch().count())};
-    bool key = false; //Checked If key generated
+    int key = 0;
     while (Box::objectCount < num) {
         if (!HEAD) {
             bool check = false;
-            if (!key) {
-                uniform_int_distribution<> range{Box::objectCount,num-1};
-                if (range(rand_num) == num-1) check = true;
-            }
+            uniform_int_distribution<> range{Box::objectCount,num-1};
+            if (range(rand_num) == num-1) check = true;
             if (check) {
                 HEAD = new Box(true);
-                key = true;
+                key++;
             }
             else HEAD = new Box;
         }
@@ -95,13 +93,13 @@ void Create_Box(Box *&HEAD, int num) {
             bool check = false;
             Box *walker = HEAD;
             while (walker->next) walker = walker->next;
-            if (!key) {
+            if (key <= Box::objectCount/5) {
                 uniform_int_distribution<> range{Box::objectCount,num-1};
                 if (range(rand_num) == num-1) check = true;
             }
             if (check) {
                 walker->append(new Box(true));
-                key = true;
+                key++;
             } 
             else walker->append(new Box);
             //Circle Linked List
@@ -112,6 +110,7 @@ void Create_Box(Box *&HEAD, int num) {
             }
         }
     }
+    return key;
 }
 
 void Place_Box(Box *HEAD) {
