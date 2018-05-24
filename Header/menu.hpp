@@ -4,5 +4,8 @@
 int menu();
 void instruction();
 int mode();
+bool arcade();
+bool custom();
+void result(bool);
 
 #endif // MENU_HPP_INCLUDED
