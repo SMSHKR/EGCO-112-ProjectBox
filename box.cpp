@@ -23,7 +23,17 @@ int Box::objectCount = 0;
 Box::Box(bool Have_Key) { key = Have_Key; objectCount++; }
 Box::~Box() { objectCount--; }
 
-bool Box::open() { return key; }
+bool Box::open(Box *&HEAD, Box *pointer) {
+    draw_color();
+    move_cursor();
+    Sleep(300);
+
+    pointer->next->prev = pointer->prev;
+    pointer->prev->next = pointer->next;
+    if (HEAD == this) HEAD = HEAD->next;
+
+    return key;
+}
 
 void Box::setxy(short a, short b) {
     x = a;

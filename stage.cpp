@@ -16,42 +16,50 @@ using namespace std;
 
 bool stage(int num) {
 
+    bool passed = true;
     Box *HEAD = nullptr;
     
-    Create_Box(HEAD,num);
+    int key = Create_Box(HEAD,num);
     
     Place_Box(HEAD);
-    Sleep(100*Box::objectCount);
+    Sleep(1000 + Box::objectCount*100);
     Replace_Box(HEAD);
     Sleep(1000);
-    Swap_Box(HEAD,0);
-    
-    Box *pointer = HEAD;
-    char input = '\0';
-    do {
-        pointer->draw_cursor();
-        input = getch();
-        switch(input) {
-            case KEY_RIGHT:
-                pointer->move_cursor();
-                pointer = pointer->next;
-                break;
-            case KEY_DOWN:
-                pointer->move_cursor();
-                for (int i=0; i<5; i++) pointer = pointer->next;
-                break;
-            case KEY_LEFT:
-                pointer->move_cursor();
-                pointer = pointer->prev;
-                break;
-            case KEY_UP:
-                pointer->move_cursor();
-                for (int i=0; i<5; i++) pointer = pointer->prev;
-                break;
-        }
-    } while (input != KEY_ENTER);
 
-    bool passed = pointer->open();
+    default_random_engine rand_num{static_cast<long unsigned int>(chrono::high_resolution_clock::now().time_since_epoch().count())};
+    uniform_int_distribution<> range{0,Box::objectCount};
+    int SwapCount = Box::objectCount + range(rand_num);
+    Swap_Box(HEAD,SwapCount);
+    
+    do {
+        Box *pointer = HEAD;
+        char input = '\0';
+        do {
+            pointer->draw_cursor();
+            input = getch();
+            switch(input) {
+                case KEY_RIGHT:
+                    pointer->move_cursor();
+                    pointer = pointer->next;
+                    break;
+                case KEY_DOWN:
+                    pointer->move_cursor();
+                    for (int i=0; i<5; i++) pointer = pointer->next;
+                    break;
+                case KEY_LEFT:
+                    pointer->move_cursor();
+                    pointer = pointer->prev;
+                    break;
+                case KEY_UP:
+                    pointer->move_cursor();
+                    for (int i=0; i<5; i++) pointer = pointer->prev;
+                    break;
+            }
+        } while (input != KEY_ENTER);
+        if (pointer->open(HEAD,pointer)) key--;
+        else passed = false;
+        delete pointer;
+    } while (key && passed);
 
     Box *destroyer = HEAD;
     while (destroyer) {
@@ -70,20 +78,18 @@ bool stage(int num) {
     return passed;
 }
 
-void Create_Box(Box *&HEAD, int num) {
+int Create_Box(Box *&HEAD, int num) {
     //Create Linked List of Box
     default_random_engine rand_num{static_cast<long unsigned int>(chrono::high_resolution_clock::now().time_since_epoch().count())};
-    bool key = false; //Checked If key generated
+    int key = 0;
     while (Box::objectCount < num) {
         if (!HEAD) {
             bool check = false;
-            if (!key) {
-                uniform_int_distribution<> range{Box::objectCount,num-1};
-                if (range(rand_num) == num-1) check = true;
-            }
+            uniform_int_distribution<> range{Box::objectCount,num-1};
+            if (range(rand_num) == num-1) check = true;
             if (check) {
                 HEAD = new Box(true);
-                key = true;
+                key++;
             }
             else HEAD = new Box;
         }
@@ -91,13 +97,13 @@ void Create_Box(Box *&HEAD, int num) {
             bool check = false;
             Box *walker = HEAD;
             while (walker->next) walker = walker->next;
-            if (!key) {
+            if (key <= Box::objectCount/5) {
                 uniform_int_distribution<> range{Box::objectCount,num-1};
                 if (range(rand_num) == num-1) check = true;
             }
             if (check) {
                 walker->append(new Box(true));
-                key = true;
+                key++;
             } 
             else walker->append(new Box);
             //Circle Linked List
@@ -108,6 +114,7 @@ void Create_Box(Box *&HEAD, int num) {
             }
         }
     }
+    return key;
 }
 
 void Place_Box(Box *HEAD) {
@@ -137,7 +144,7 @@ void Replace_Box(Box *HEAD) {
 }
 
 void Swap_Box(Box *HEAD, int count) {
-    if (count < Box::objectCount) {
+    if (count) {
         
         default_random_engine rand_num{static_cast<long unsigned int>(chrono::high_resolution_clock::now().time_since_epoch().count())};
         uniform_int_distribution<> range{1,Box::objectCount};
@@ -152,7 +159,7 @@ void Swap_Box(Box *HEAD, int count) {
         Sleep(300);
         swap(ch1,ch2);
         
-        count++;
+        count--;
         Swap_Box(HEAD,count);
     }
 }

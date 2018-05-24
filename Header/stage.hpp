@@ -2,7 +2,7 @@
 #define STAGE_HPP_INCLUDED
 
 bool stage(int);
-void Create_Box(Box*&,int);
+int Create_Box(Box*&,int);
 void Place_Box(Box*);
 void Replace_Box(Box*);
 void Swap_Box(Box*,int);
