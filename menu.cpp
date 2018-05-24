@@ -160,13 +160,17 @@ bool arcade() {
         passed = stage(i);
         if (!passed) break;
     }
+    passed = stage(3);
     return passed;
 }
 
 bool custom() {
+    
     bool passed, check;
     int Box_Q;
+
     gotoxy(20,20); cout << "Enter Number Of Box (3-50): ";
+    
     do {
         check = false;
         try {

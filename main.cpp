@@ -10,46 +10,38 @@ using namespace std;
 
 int main() {
 
-    //load load1(100);
-    //load1.loading();
-Menu:
-    system("cls");
-    int choice = menu();
-    switch (choice) {
-        case 1: 
-            system("cls");
-            goto Game;
-            break;
-        case 2:
-            system("cls");
-            instruction();
-            cin.get();
-            goto Menu;
-            break;
-        case 3:
-            goto Exit;
-            break;
-    }
-    
-Game:
+    load load1(100);
+    load1.loading();
 
+    int choice, game_mode;
     bool passed;
-    choice = mode();
-    switch (choice) {
-        case 1: 
-            system("cls");
-            passed = arcade();
-            break;
-        case 2: 
-            passed = custom();
-            break;
-    }
 
-    result(passed);
-    goto Menu;
+    do {
+        system("cls");
+        choice = menu();
+        switch (choice) {
+            case 1: 
+                system("cls");
+                game_mode = mode();
+                switch (game_mode) {
+                    case 1: 
+                        system("cls");
+                        passed = arcade();
+                        break;
+                    case 2: 
+                        passed = custom();
+                        break;
+                }
+                result(passed);
+                break;
+            case 2:
+                system("cls");
+                instruction();
+                cin.get();
+                break;
+        }
+    } while (choice != 3);
 
-Exit:
-    return 0;
-    
+    return 0;  
 }
   
