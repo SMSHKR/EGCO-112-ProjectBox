@@ -164,6 +164,7 @@ bool custom() {
 }
 
 void result(bool passed) {
+    system("cls");
     if (passed) {
         textcolor(14);
         gotoxy(6,5);  cout<<"           (        )     )       (                )  (               )          )   (     (        )     )       ( ";
@@ -179,10 +180,11 @@ void result(bool passed) {
     }
     else {
         textcolor(14);
-        gotoxy(55,10); cout<<"N   N  OOO   OOO  BBBB " ;
-        gotoxy(55,11); cout<<"NN  N O   O O   O B   B" ;
-        gotoxy(55,12); cout<<"N N N O   O O   O BBBB " ;
-        gotoxy(55,13); cout<<"N  NN O   O O   O B   B" ;
-        gotoxy(55,14); cout<<"N   N  OOO   OOO  BBBB " ;
+        gotoxy(46,10); cout<<"N   N  OOO   OOO  BBBB " ;
+        gotoxy(46,11); cout<<"NN  N O   O O   O B   B" ;
+        gotoxy(46,12); cout<<"N N N O   O O   O BBBB " ;
+        gotoxy(46,13); cout<<"N  NN O   O O   O B   B" ;
+        gotoxy(46,14); cout<<"N   N  OOO   OOO  BBBB " ;
     }
+    cin.get();
 }
