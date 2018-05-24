@@ -24,7 +24,7 @@ int main() {
     gotoxy(6,10);
     cout<<" 88888888P  `8888P'  dP    dP    `Y88888P' dP     dP dP     dP dP     dP  `8888P'  8888' Y88'   dP     dP  \n";
    */
-   textcolor(14);
+    /*textcolor(14);
     gotoxy(6,5);
     cout<<"           (        )     )       (                )  (               )          )   (     (        )     )       (     ";
     gotoxy(6,6);
@@ -45,7 +45,7 @@ int main() {
     cout<<" W W W   I  N  NN N  NN E    R R       C    H  H  I  C    K K  E    N  NN     D  D  I  N  NN N  NN E    R R   ";
     gotoxy(6,14);
     cout<<"  W W   III N   N N   N EEEE R  RR      CCC H  H III  CCC K  K EEEE N   N     DDD  III N   N N   N EEEE R  RR ";
-    /*
+    *//*
     textcolor(14);
     gotoxy(55,10);
     cout<<"N   N  OOO   OOO  BBBB " ;
@@ -58,6 +58,12 @@ int main() {
     gotoxy(55,14);
     cout<<"N   N  OOO   OOO  BBBB " ;
 */
+textcolor(14);
+gotoxy(15,5);cout<<" .--.     .   .      .--.       .--.       .-.      .---.     .    .      .--.      .--.      .---.";
+gotoxy(15,6);cout<<":         |   |     :    :     :    :     (   )     |         |\  /|     :    :     |   :     |    "   ;  
+gotoxy(15,7);cout<<"|         |---|     |    |     |    |      `-.      |---      | \/ |     |    |     |   |     |--- " ;
+gotoxy(15,8);cout<<":         |   |     :    ;     :    ;     (   )     |         |   |     :    ;     |   ;     |    "  ;   
+gotoxy(15,9);cout<<" `--'     '   '      `--'       `--'       `-'      '---'     '   '      `--'      '--'      '---' " ; 
 
     cin.get();
     return 0;

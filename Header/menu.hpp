@@ -3,5 +3,6 @@
 
 int menu();
 void instruction();
+int mode();
 
 #endif // MENU_HPP_INCLUDED

@@ -24,6 +24,7 @@ int menu()
     gotoxy(44,20); cout<<"Instruction";
     gotoxy(44,22); cout<<"Exit";
 
+    
     int choice = 1;
     char scroll;
     do {
@@ -94,10 +95,47 @@ gotoxy(35,15); cout <<c<<"              "<<c<<endl;
 gotoxy(35,16); cout <<c<<"              "<<c<<endl;
 gotoxy(35,17); cout <<c<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<c<<endl;
 
-
-
-
-
-
-
 }
+
+int mode()
+{
+    int choice = 1;
+    char scroll;
+    do {
+        switch(choice) {
+            case 1:
+                gotoxy(13,10); cout << ">";
+                break;
+            case 2:
+                gotoxy(13,13); cout << ">";
+                break;
+        }
+        scroll = getch();
+        switch(scroll) {
+            case KEY_UP:
+                switch(choice) {
+                    case 1:
+                        gotoxy(13,10); cout << " ";
+                        break;
+                    case 2:
+                        gotoxy(13,13); cout << " ";
+                        break;
+        
+                }
+                choice == 1 ? choice = 2 : choice--;
+                break;
+            case KEY_DOWN:
+                switch(choice) {
+                    case 1:
+                        gotoxy(13,10); cout << " ";
+                        break;
+                    case 2:
+                        gotoxy(13,13); cout << " ";
+                        break;
+                }
+                choice == 2 ? choice = 1 : choice++;
+                break;
+        }
+    } while (scroll != KEY_ENTER);
+ return choice;
+ }
