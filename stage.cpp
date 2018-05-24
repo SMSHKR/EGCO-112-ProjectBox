@@ -21,10 +21,10 @@ bool stage(int num) {
     Create_Box(HEAD,num);
     
     Place_Box(HEAD);
-    Sleep(3000);
+    Sleep(100*Box::objectCount);
     Replace_Box(HEAD);
     Sleep(1000);
-    //Swap_Box(HEAD,0);
+    Swap_Box(HEAD,0);
     
     Box *pointer = HEAD;
     char input = '\0';
@@ -149,7 +149,7 @@ void Swap_Box(Box *HEAD, int count) {
             for (int i=1; i<range(rand_num); i++) ch2 = ch2->next;
         } while (ch1 == ch2);
         
-        Sleep(500);
+        Sleep(300);
         swap(ch1,ch2);
         
         count++;
