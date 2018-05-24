@@ -10,7 +10,7 @@ using namespace std;
 #define KEY_RIGHT 77
 #define KEY_DOWN 80
 
-int menu() 
+int menu()
 {
     textcolor(14);
     gotoxy(6,5);  cout <<" 888888ba   .88888.  dP    dP    dP     dP 888888ba  dP     dP 888888ba   .88888.  dP   dP   dP 888888ba  " << endl;
@@ -99,30 +99,38 @@ gotoxy(35,17); cout <<c<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<c<<endl;
 
 int mode()
 {
+    textcolor(14);
+    gotoxy(15,5); cout<<" .--.     .   .      .--.       .--.       .-.      .---.     .    .      .--.      .--.      .---.";
+    gotoxy(15,6); cout<<":         |   |     :    :     :    :     (   )     |         |\  /|     :    :     |   :     |    "   ;  
+    gotoxy(15,7); cout<<"|         |---|     |    |     |    |      `-.      |---      | \/ |     |    |     |   |     |--- " ;
+    gotoxy(15,8); cout<<":         |   |     :    ;     :    ;     (   )     |         |   |     :    ;     |   ;     |    "  ;   
+    gotoxy(15,9); cout<<" `--'     '   '      `--'       `--'       `-'      '---'     '   '      `--'      '--'      '---' " ; 
+    gotoxy(15,11); cout<<"Arcade Mode";
+    gotoxy(15,13); cout<<"Custom Mode";
+
     int choice = 1;
     char scroll;
     do {
         switch(choice) {
             case 1:
-                gotoxy(13,10); cout << ">";
+                gotoxy(13,11); cout << ">";
                 break;
             case 2:
                 gotoxy(13,13); cout << ">";
                 break;
         }
         scroll = getch();
-        switch(scroll) {
+        switch (scroll) {
             case KEY_UP:
                 switch(choice) {
-                    case 1:
-                        gotoxy(13,10); cout << " ";
-                        break;
-                    case 2:
-                        gotoxy(13,13); cout << " ";
-                        break;
-        
+                case 1:
+                    gotoxy(13,11); cout << " ";
+                    break;
+                case 2:
+                    gotoxy(13,13); cout << " ";
+                    break;
                 }
-                choice == 1 ? choice = 2 : choice--;
+                choice == 1 ? choice = 2 : choice = 1;
                 break;
             case KEY_DOWN:
                 switch(choice) {
@@ -133,7 +141,7 @@ int mode()
                         gotoxy(13,13); cout << " ";
                         break;
                 }
-                choice == 2 ? choice = 1 : choice++;
+                choice == 2 ? choice = 1 : choice = 2;
                 break;
         }
     } while (scroll != KEY_ENTER);

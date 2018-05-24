@@ -10,12 +10,12 @@ using namespace std;
 
 int main() {
 
-    load load1(100);
-    load1.loading();
-    Menu:
-        system("cls");
-        int choice = menu();
-        switch (choice) {
+    //load load1(100);
+    //load1.loading();
+Menu:
+    system("cls");
+    int choice = menu();
+    switch (choice) {
         case 1: 
             system("cls");
             goto Game;
@@ -29,22 +29,13 @@ int main() {
         case 3:
             goto Exit;
             break;
-        }
+    }
     
-    Game:
-    textcolor(14);
-    gotoxy(15,5);cout<<" .--.     .   .      .--.       .--.       .-.      .---.     .    .      .--.      .--.      .---.";
-    gotoxy(15,6);cout<<":         |   |     :    :     :    :     (   )     |         |\  /|     :    :     |   :     |    "   ;  
-    gotoxy(15,7);cout<<"|         |---|     |    |     |    |      `-.      |---      | \/ |     |    |     |   |     |--- " ;
-    gotoxy(15,8);cout<<":         |   |     :    ;     :    ;     (   )     |         |   |     :    ;     |   ;     |    "  ;   
-    gotoxy(15,9);cout<<" `--'     '   '      `--'       `--'       `-'      '---'     '   '      `--'      '--'      '---' " ; 
-    gotoxy(15,10);
-    cout<<"Arcade Mode";
-    gotoxy(15,13);
-    cout<<"Custom Mode";
-    int choice2 = mode();
-    switch(choice2)
-    {
+Game:
+    stage(15);
+/*
+    choice = mode();
+    switch (choice) {
         case 1: 
             system("cls");
             goto Arcade;
@@ -54,20 +45,19 @@ int main() {
             goto Custom;
             break;
     }
-    Arcade:
-    int numbox;
-    cout<<"Enter Number Of Box (3-50): ";
-    cin>>numbox;
+Arcade:
     bool passed;
-    passed = stage(numbox);
+    passed = stage(3);
     system("cls");
     
-    Custom:
-    cout<<"Enter Number Of Box (3-100): ";
-    cin>>numbox;
+Custom:
+    int numbox;
+    cout << "Enter Number Of Box (3-50): ";
+    cin >> numbox;
     passed = stage(numbox);
     system("cls");
-    
+*/
+    /*
     if (passed)
     {
     textcolor(14);
@@ -91,9 +81,10 @@ int main() {
     gotoxy(55,13);  cout<<"N  NN O   O O   O B   B" ;
     gotoxy(55,14);  cout<<"N   N  OOO   OOO  BBBB \n" ;
     }
+    */
     cout << "objectCount: " << Box::objectCount << endl;
     cin.get();
-    Exit:
+Exit:
     return 0;
     
 }

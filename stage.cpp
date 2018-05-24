@@ -99,7 +99,7 @@ int Create_Box(Box *&HEAD, int num) {
             while (walker->next) walker = walker->next;
             if (key <= Box::objectCount/5) {
                 uniform_int_distribution<> range{Box::objectCount,num-1};
-                if (range(rand_num) == num-1) check = true;
+                if (range(rand_num) == num-1 || Box::objectCount/5 > key) check = true;
             }
             if (check) {
                 walker->append(new Box(true));
