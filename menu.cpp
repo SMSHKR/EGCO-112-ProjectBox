@@ -160,7 +160,6 @@ bool arcade() {
         passed = stage(i);
         if (!passed) break;
     }
-    passed = stage(3);
     return passed;
 }
 
