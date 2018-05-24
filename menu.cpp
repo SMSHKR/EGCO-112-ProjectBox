@@ -78,29 +78,29 @@ int menu()
     return choice;
 }
 
-void instruction() 
-{
-char c = 219;
-char d = 205;
+void instruction() {
+    char c = 219;
+    char d = 205;
 
-textcolor(14);
-gotoxy(6,5);  cout <<"dP 888888ba  .d88888b  d888888P dP     dP  a88888b. d888888P dP  .88888.  888888ba  " << endl;
-gotoxy(6,6);  cout <<"88 88    `8b 88.    '     88    88     88 d8'   `88    88    88 d8'   `8b 88    `8b  " << endl;
-gotoxy(6,7);  cout <<"88 88     88 `Y88888b.    88    88     88 88           88    88 88     88 88     88 " << endl;
-gotoxy(6,8);  cout <<"88 88     88       `8b    88    88     88 88           88    88 88     88 88     88 " << endl;
-gotoxy(6,9);  cout <<"88 88     88 d8'   .8P    88    Y8.   .8P Y8.   .88    88    88 Y8.   .8P 88     88 " << endl;
-gotoxy(6,10); cout <<"dP dP     dP  Y88888P     dP    `Y88888P'  Y88888P'    dP    dP  `8888P'  dP     dP " << endl;
-    
-textcolor(14);
-gotoxy(35,13); cout <<c<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<c<<endl;
-gotoxy(35,14); cout <<c<<d<<d<<d<<d<<d<<c<<c<<c<<c<<d<<d<<d<<d<<d<<c<<endl;
-gotoxy(35,15); cout <<c<<"              "<<c<<endl;
-gotoxy(35,16); cout <<c<<"              "<<c<<endl;
-gotoxy(35,17); cout <<c<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<c<<endl;
+    textcolor(14);
+    gotoxy(6,2);  cout <<"dP 888888ba  .d88888b  d888888P dP     dP  a88888b. d888888P dP  .88888.  888888ba  " << endl;
+    gotoxy(6,3);  cout <<"88 88    `8b 88.    '     88    88     88 d8'   `88    88    88 d8'   `8b 88    `8b  " << endl;
+    gotoxy(6,4);  cout <<"88 88     88 `Y88888b.    88    88     88 88           88    88 88     88 88     88 " << endl;
+    gotoxy(6,5);  cout <<"88 88     88       `8b    88    88     88 88           88    88 88     88 88     88 " << endl;
+    gotoxy(6,6);  cout <<"88 88     88 d8'   .8P    88    Y8.   .8P Y8.   .88    88    88 Y8.   .8P 88     88 " << endl;
+    gotoxy(6,7);  cout <<"dP dP     dP  Y88888P     dP    `Y88888P'  Y88888P'    dP    dP  `8888P'  dP     dP " << endl;
 
-gotoxy(20,20);
-cout<<"Select box which have key until complete of each stage";
+    gotoxy(40,10); cout <<c<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<c<<endl;
+    gotoxy(40,11); cout <<c<<d<<d<<d<<d<<d<<c<<c<<c<<c<<d<<d<<d<<d<<d<<c<<endl;
+    gotoxy(40,12); cout <<c<<"              "<<c<<endl;
+    gotoxy(40,13); cout <<c<<"              "<<c<<endl;
+    gotoxy(40,14); cout <<c<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<c<<endl;
 
+    gotoxy(17,17); cout<<"Select box which have key (yellow) or you will faill the stage";
+    gotoxy(20,19); cout<<"Arcade Mode";
+    gotoxy(20,20); cout<<"  You will have to play until last stage (15) to win";
+    gotoxy(20,22); cout<<"Custom Mode";
+    gotoxy(20,23); cout<<"  You can choose how many box you want to play";
 }
 
 int mode()
