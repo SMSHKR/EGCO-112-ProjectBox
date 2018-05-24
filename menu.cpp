@@ -95,6 +95,8 @@ gotoxy(35,15); cout <<c<<"              "<<c<<endl;
 gotoxy(35,16); cout <<c<<"              "<<c<<endl;
 gotoxy(35,17); cout <<c<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<c<<endl;
 
+gotoxy(20,20);
+cout<<"Select box which have key until then complete of each state";
 }
 
 int mode()
