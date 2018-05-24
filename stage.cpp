@@ -16,6 +16,7 @@ using namespace std;
 
 bool stage(int num) {
 
+    bool passed = true;
     Box *HEAD = nullptr;
     
     int key = Create_Box(HEAD,num);
@@ -30,32 +31,38 @@ bool stage(int num) {
     int SwapCount = Box::objectCount + range(rand_num);
     //Swap_Box(HEAD,SwapCount);
     
-    Box *pointer = HEAD;
-    char input = '\0';
     do {
-        pointer->draw_cursor();
-        input = getch();
-        switch(input) {
-            case KEY_RIGHT:
-                pointer->move_cursor();
-                pointer = pointer->next;
-                break;
-            case KEY_DOWN:
-                pointer->move_cursor();
-                for (int i=0; i<5; i++) pointer = pointer->next;
-                break;
-            case KEY_LEFT:
-                pointer->move_cursor();
-                pointer = pointer->prev;
-                break;
-            case KEY_UP:
-                pointer->move_cursor();
-                for (int i=0; i<5; i++) pointer = pointer->prev;
-                break;
+        Box *pointer = HEAD;
+        char input = '\0';
+        do {
+            pointer->draw_cursor();
+            input = getch();
+            switch(input) {
+                case KEY_RIGHT:
+                    pointer->move_cursor();
+                    pointer = pointer->next;
+                    break;
+                case KEY_DOWN:
+                    pointer->move_cursor();
+                    for (int i=0; i<5; i++) pointer = pointer->next;
+                    break;
+                case KEY_LEFT:
+                    pointer->move_cursor();
+                    pointer = pointer->prev;
+                    break;
+                case KEY_UP:
+                    pointer->move_cursor();
+                    for (int i=0; i<5; i++) pointer = pointer->prev;
+                    break;
+            }
+        } while (input != KEY_ENTER);
+        bool correct = pointer->open();
+        if (correct) key--;
+        else {
+            passed = false;
+            break;
         }
-    } while (input != KEY_ENTER);
-
-    bool passed = pointer->open();
+    } while (key);
 
     Box *destroyer = HEAD;
     while (destroyer) {
