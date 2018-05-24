@@ -23,6 +23,8 @@ int Box::objectCount = 0;
 Box::Box(bool Have_Key) { key = Have_Key; objectCount++; }
 Box::~Box() { objectCount--; }
 
+bool Box::open() { return key; }
+
 void Box::setxy(short a, short b) {
     x = a;
     y = b;
@@ -33,21 +35,12 @@ void Box::append(Box *NODE) {
     NODE->prev = this;
 }
 
-void Box::open() {
-    if (key) {
-
-    }
-    else {
-
-    }
-}
-
 void Box::draw_cursor() {
-    gotoxy(x+8,y+7); cout << "^";
+    gotoxy(x+8,y+6); cout << "^";
 }
 
 void Box::move_cursor() {
-    gotoxy(x+8,y+7); cout << " ";
+    gotoxy(x+8,y+6); cout << " ";
 }
 
 void Box::black() {

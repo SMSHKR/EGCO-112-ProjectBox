@@ -11,46 +11,34 @@ int main() {
 
     //load load1(100);
     //load1.loading();
-    bool check;
-    try
-    {
-        Menu:
-        check = false;
-        do
-        {
-            system("cls");
-            int choice = menu();
-            switch (choice)
-            {
-            case 1: 
-                system("cls");
-                break;
-            case 2:
-                system("cls");
-                instruction();
-                cin.get();
-                goto Menu;
-                break;
-            case 3:
-                goto Exit;
-                break;
-            }
-        } while (check);
-    }
-    catch (...)
-    {
-        cin.clear();
-        cin.ignore(50,'\n');
-        check = true;
-    }
-
-    bool passed;
-    passed = stage(3);
-    if (passed) {
+    Menu:
         system("cls");
-        cout << "objectCount: " << Box::objectCount << endl;
-    }
+        int choice = menu();
+        switch (choice) {
+        case 1: 
+            system("cls");
+            goto Game;
+            break;
+        case 2:
+            system("cls");
+            instruction();
+            cin.get();
+            goto Menu;
+            break;
+        case 3:
+            goto Exit;
+            break;
+        }
+    
+    Game:
+    bool passed;
+    passed = stage(5);
+    system("cls");
+    if (passed) cout << "Passed" << endl;
+    else cout << "Failed" << endl;
+    cout << "objectCount: " << Box::objectCount << endl;
     cin.get();
+    
     Exit:
     return 0;
 }

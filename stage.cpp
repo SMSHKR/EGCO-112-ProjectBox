@@ -43,7 +43,7 @@ bool stage(int num) {
         }
     } while (input != KEY_ENTER);
 
-
+    bool passed = pointer->open();
 
     Box *destroyer = HEAD;
     while (destroyer) {
@@ -58,7 +58,8 @@ bool stage(int num) {
         }
 
     }
-    return 1; //If player passed
+    
+    return passed;
 }
 
 void Create_Box(Box *&HEAD, int num) {
@@ -105,13 +106,13 @@ void Place_Box(Box *HEAD) {
     Box *t = HEAD;
     //Initial Position
     short x = 5;
-    short y = 5;
+    short y = 2;
     for (int i=0; i < Box::objectCount; i++) {
         t->setxy(x,y);
         t->draw_color();
         t = t->next;
         //Moving Position
-        x += 25;
+        x += 23;
         y += 0;
     }
 }
@@ -128,13 +129,13 @@ void Swap_Box(Box *HEAD, int count) {
     if (count < Box::objectCount) {
         
         default_random_engine rand_num{static_cast<long unsigned int>(chrono::high_resolution_clock::now().time_since_epoch().count())};
-        uniform_int_distribution<> range{0,Box::objectCount};
+        uniform_int_distribution<> range{1,Box::objectCount};
         
         Box *ch1 = HEAD, *ch2 = HEAD;
         
-        for (int i=0; i<range(rand_num); i++) ch1 = ch1->next;
+        for (int i=1; i<range(rand_num); i++) ch1 = ch1->next;
         do {
-            for (int i=0; i<range(rand_num); i++) ch2 = ch2->next;
+            for (int i=1; i<range(rand_num); i++) ch2 = ch2->next;
         } while (ch1 == ch2);
         
         Sleep(500);
