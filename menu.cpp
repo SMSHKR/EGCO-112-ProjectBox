@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 #include <conio.h>
 #include "Header/menu.hpp"
 #include "Header/box.hpp"
@@ -160,7 +161,38 @@ bool arcade() {
 }
 
 bool custom() {
+    bool passed, check;
+    int Box_Q;
+    gotoxy(20,20); cout << "Enter Number Of Box (3-50): ";
+    do {
+        check = false;
+        try {
+            cin >> Box_Q;
+            if (cin.fail()) throw false;
+            if (Box_Q < 3 || Box_Q > 50) throw Box_Q;
+        }
+        catch (int) {
+            cin.clear();
+            cin.ignore(1000,'\n');
+            check = true;
+            gotoxy(48,20); cout << setw(40) << " ";
+            gotoxy(41,24); cout << setw(20) << left << "Value Out of Range!";
+            gotoxy(48,20);
+        }
+        catch (...) {
+            cin.clear();
+            cin.ignore(1000,'\n');
+            check = true;
+            gotoxy(48,20); cout << setw(40) << " ";
+            gotoxy(41,24); cout << setw(20) << left << "Invalid Value!";
+            gotoxy(48,20);
+        }
+    } while (check);
 
+    system("cls");
+    passed = stage(Box_Q);
+
+    return passed;
 }
 
 void result(bool passed) {

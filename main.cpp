@@ -33,7 +33,7 @@ Menu:
     
 Game:
 
-    bool passed; /*
+    bool passed;
     choice = mode();
     switch (choice) {
         case 1: 
@@ -41,18 +41,10 @@ Game:
             passed = arcade();
             break;
         case 2: 
-            //bool passed = custom();
+            passed = custom();
             break;
     }
-    */
-/*
-    int numbox;
-    cout << "Enter Number Of Box (3-50): ";
-    cin >> numbox;
-    passed = stage(numbox);
-    system("cls");
-*/
-    passed = stage(3);
+
     result(passed);
     goto Menu;
 
