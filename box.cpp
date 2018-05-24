@@ -13,7 +13,7 @@ void swap(Box *&ch1, Box *&ch2) {
     std::swap(ch1->key,ch2->key);
 
     //ReDraw Box
-    Sleep(300);
+    Sleep(500);
     ch1->draw();
     ch2->draw();
 }
@@ -26,7 +26,7 @@ Box::~Box() { objectCount--; }
 bool Box::open(Box *&HEAD, Box *pointer) {
     draw_color();
     move_cursor();
-    Sleep(300);
+    Sleep(1000);
 
     pointer->next->prev = pointer->prev;
     pointer->prev->next = pointer->next;

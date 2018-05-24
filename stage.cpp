@@ -156,7 +156,7 @@ void Swap_Box(Box *HEAD, int count) {
             for (int i=1; i<range(rand_num); i++) ch2 = ch2->next;
         } while (ch1 == ch2);
         
-        Sleep(300);
+        Sleep(500);
         swap(ch1,ch2);
         
         count--;
