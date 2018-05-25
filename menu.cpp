@@ -96,7 +96,7 @@ void instruction() {
     gotoxy(40,13); cout <<c<<"              "<<c<<endl;
     gotoxy(40,14); cout <<c<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<c<<endl;
 
-    gotoxy(17,17); cout<<"Select box which have key (yellow) or you will faill the stage";
+    gotoxy(17,17); cout<<"Select box which have key (yellow) or you will fail the stage";
     gotoxy(20,19); cout<<"Arcade Mode";
     gotoxy(20,20); cout<<"  You will have to play until last stage (15) to win";
     gotoxy(20,22); cout<<"Custom Mode";
