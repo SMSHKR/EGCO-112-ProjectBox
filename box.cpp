@@ -6,6 +6,7 @@ using namespace std;
 
 void swap(Box *&ch1, Box *&ch2) {
     //Draw Black over Box
+    Sleep(400);
     ch1->black();
     ch2->black();
 
@@ -13,7 +14,7 @@ void swap(Box *&ch1, Box *&ch2) {
     std::swap(ch1->key,ch2->key);
 
     //ReDraw Box
-    Sleep(500);
+    Sleep(400);
     ch1->draw();
     ch2->draw();
 }

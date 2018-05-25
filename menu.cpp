@@ -96,7 +96,7 @@ void instruction() {
     gotoxy(40,13); cout <<c<<"              "<<c<<endl;
     gotoxy(40,14); cout <<c<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<d<<c<<endl;
 
-    gotoxy(17,17); cout<<"Select box which have key (yellow) or you will faill the stage";
+    gotoxy(17,17); cout<<"Select box which have key (yellow) or you will fail the stage";
     gotoxy(20,19); cout<<"Arcade Mode";
     gotoxy(20,20); cout<<"  You will have to play until last stage (15) to win";
     gotoxy(20,22); cout<<"Custom Mode";
@@ -156,7 +156,7 @@ int mode()
 
 bool arcade() {
     bool passed;
-    for (int i=3; i<=15; i++) {
+    for (int i=3; i<=20; i++) {
         passed = stage(i);
         if (!passed) break;
     }
@@ -218,11 +218,11 @@ void result(bool passed) {
     }
     else {
         textcolor(14);
-        gotoxy(46,10); cout<<"N   N  OOO   OOO  BBBB " ;
-        gotoxy(46,11); cout<<"NN  N O   O O   O B   B" ;
-        gotoxy(46,12); cout<<"N N N O   O O   O BBBB " ;
-        gotoxy(46,13); cout<<"N  NN O   O O   O B   B" ;
-        gotoxy(46,14); cout<<"N   N  OOO   OOO  BBBB " ;
+        gotoxy(46,10); cout<<"BBBB   OOO   OOO  M       M  " ;
+        gotoxy(46,11); cout<<"B   B O   O O   O M M   M M  " ;
+        gotoxy(46,12); cout<<"BBBB  O   O O   O M   M   M  " ;
+        gotoxy(46,13); cout<<"B   B O   O O   O M       M  " ;
+        gotoxy(46,14); cout<<"BBBB   OOO   OOO  M       M  " ;
     }
     cin.get();
 }
