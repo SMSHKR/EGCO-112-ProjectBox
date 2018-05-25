@@ -218,11 +218,19 @@ void result(bool passed) {
     }
     else {
         textcolor(14);
+<<<<<<< HEAD
         gotoxy(46,10); cout<<"BBBB   OOO   OOO  M       M  " ;
         gotoxy(46,11); cout<<"B   B O   O O   O M M   M M  " ;
         gotoxy(46,12); cout<<"BBBB  O   O O   O M   M   M  " ;
         gotoxy(46,13); cout<<"B   B O   O O   O M       M  " ;
         gotoxy(46,14); cout<<"BBBB   OOO   OOO  M       M  " ;
+=======
+        gotoxy(46,10); cout<<"BBBB   OOO   OOO  M      M  "  ;
+        gotoxy(46,11); cout<<"B   B O   O O   O M M  M M  " ;
+        gotoxy(46,12); cout<<"BBBB  O   O O   O M  M   M  "  ;
+        gotoxy(46,13); cout<<"B   B O   O O   O M      M  "  ;
+        gotoxy(46,14); cout<<"BBBB   OOO   OOO  M      M  " ;
+>>>>>>> 724e3e1efad8a8607e3d67d5dc36d1b71aa74205
     }
     cin.get();
 }
